@@ -1,0 +1,94 @@
+=================================================== BSF Target ====================================================
+Problem name: sc105
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	105	n = 163
+After conversion:  m =	253	n = 103
+Eps Zero Compare:	1e-08
+Eps Min Dir Length:	1e-07
+Eps Objective:		0.01
+Eps Shift:		1e-08
+Eps Zero Direction:	1e-08
+Exact Obj Value:	52.202
+Distance to Apex:	0
+Low Cost Percentile:	0
+Gap Max:		0.0001
+Obj Vector Length:	0.0001
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	1
+Number of low-cost variables:	0
+Number of zero-cost variables:	102
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	               1               0               0               0               0               0               0               0 ...
+Start point:	       51.831454       11.126331       51.831559     -9.6254e-09       51.831454      8.4113e-09       11.126331       51.831559 ...	F(x) = 51.831454
+Apex point:	       51.831454       11.126331       51.831559     -9.6254e-09       51.831454      8.4113e-09       11.126331       51.831559 ...	F(x) = 51.831454
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       51.831454       11.126331       51.831559     -9.6254e-09       51.831454      8.4113e-09       11.126331       51.831559 ...	F(t) =        51.831454
+Landing# 0. Elapsed time: 3
+u =		       51.831463       11.126362       51.831518  -8.4425944e-09       51.831463   7.8483848e-09       11.126362       51.831518 ...	F(t) =        51.831463
+Landing# 100. Elapsed time: 359
+u =		       51.832103        11.12582       51.832241  -9.0491409e-09       51.832103    8.796777e-09        11.12582       51.832241 ...	F(t) =        51.832103
+Landing# 200. Elapsed time: 755
+u =		        51.83266       11.125505        51.83266  -9.4534784e-09        51.83266   8.6803303e-09       11.125505        51.83266 ...	F(t) =         51.83266
+Landing# 300. Elapsed time: 1165
+u =		        51.83314        11.12504        51.83328  -8.9492253e-09        51.83314   8.2336874e-09        11.12504        51.83328 ...	F(t) =         51.83314
+Landing# 400. Elapsed time: 1584
+u =		       51.833631       11.124776       51.833632  -9.0775827e-09       51.833631   1.0387673e-08       11.124776       51.833632 ...	F(t) =        51.833631
+Landing# 500. Elapsed time: 1991
+u =		       51.834072         11.1243       51.834266  -8.6779676e-09       51.834072   9.0148241e-09       11.124301       51.834266 ...	F(t) =        51.834072
+Landing# 600. Elapsed time: 2429
+u =		       51.834581       11.123949       51.834735  -8.1455935e-09       51.834581   9.4663729e-09       11.123949       51.834735 ...	F(t) =        51.834581
+Landing# 700. Elapsed time: 2865
+u =		       51.835062       11.123635       51.835154  -8.2662724e-09       51.835063    6.958525e-09       11.123635       51.835154 ...	F(t) =        51.835062
+Landing# 800. Elapsed time: 3283
+u =		       51.835541       11.123311       51.835585  -8.1510253e-09       51.835541   7.8761537e-09       11.123311       51.835585 ...	F(t) =        51.835541
+Landing# 900. Elapsed time: 3681
+u =		       51.835977       11.123001       51.835998  -5.8163773e-09       51.835977   6.5760575e-09       11.123001       51.835998 ...	F(t) =        51.835977
+Landing# 1000. Elapsed time: 4326
+u =		       51.836045        11.12292       51.836107  -8.4897318e-09       51.836045   9.1069341e-09        11.12292       51.836107 ...	F(t) =        51.836045
+Landing# 1100. Elapsed time: 4980
+u =		       51.836075       11.122944       51.836075  -9.6684676e-09       51.836075   7.5808336e-09       11.122944       51.836075 ...	F(t) =        51.836075
+Landing# 1200. Elapsed time: 5618
+u =		        51.83609       11.122932        51.83609  -9.0906423e-09        51.83609   8.2435417e-09       11.122932        51.83609 ...	F(t) =         51.83609
+Landing# 1300. Elapsed time: 6254
+u =		       51.836116       11.122859       51.836188  -8.8214871e-09       51.836116   9.1583972e-09       11.122859       51.836188 ...	F(t) =        51.836116
+Landing# 1400. Elapsed time: 6931
+u =		       51.836144       11.122892       51.836144   -9.095357e-09       51.836144   7.9538074e-09       11.122892       51.836144 ...	F(t) =        51.836144
+Landing# 1500. Elapsed time: 7559
+u =		       51.836166       11.122876       51.836166  -8.1068747e-09       51.836166   8.9396727e-09       11.122876       51.836166 ...	F(t) =        51.836166
+Landing# 1600. Elapsed time: 8226
+u =		       51.836197       11.122853       51.836196  -9.9553281e-09       51.836197   8.0229761e-09       11.122853       51.836197 ...	F(t) =        51.836197
+Landing# 1700. Elapsed time: 8864
+u =		       51.836207       11.122752       51.836331  -8.7925383e-09       51.836207   9.1033282e-09       11.122752       51.836331 ...	F(t) =        51.836207
+Landing# 1800. Elapsed time: 9513
+u =		       51.836234       11.122778       51.836296  -9.0291856e-09       51.836234   8.3937929e-09       11.122778       51.836296 ...	F(t) =        51.836234
+Landing# 1900. Elapsed time: 10167
+u =		       51.836267       11.122779       51.836295  -9.0952385e-09       51.836267   8.2997782e-09       11.122779       51.836295 ...	F(t) =        51.836267
+Landing# 2000. Elapsed time: 10836
+u =		       51.836283       11.122733       51.836356  -9.1543419e-09       51.836283    8.672037e-09       11.122733       51.836356 ...	F(t) =        51.836283
+Landing# 2100. Elapsed time: 11537
+u =		       51.836315        11.12276        51.83632  -7.7805887e-09       51.836315   7.2467067e-09        11.12276        51.83632 ...	F(t) =        51.836315
+Landing# 2200. Elapsed time: 12185
+u =		       51.836322       11.122653       51.836463  -8.5769078e-09       51.836322   8.6020534e-09       11.122653       51.836463 ...	F(t) =        51.836322
+Landing# 2300. Elapsed time: 12865
+u =		       51.836349       11.122738       51.836349  -7.9376701e-09       51.836349   9.0399711e-09       11.122738       51.836349 ...	F(t) =        51.836349
+Landing# 2400. Elapsed time: 13546
+u =		       51.836363       11.122728       51.836363  -9.6897208e-09       51.836363   8.2481307e-09       11.122728       51.836363 ...	F(t) =        51.836363
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+slurmd[node177]: error: *** STEP 326020.0 CANCELLED AT 2022-09-03T20:55:27 ***
+[0:node177] unexpected disconnect completion event from [10:node288]
+Assertion failed in file ../../dapl_conn_rc.c at line 1128: 0
+internal ABORT - process 0
+slurmd[node177]: error: *** JOB 326020 CANCELLED AT 2022-09-03T20:55:27 ***
+[mpiexec@node177] HYD_pmcd_pmiserv_send_signal (./pm/pmiserv/pmiserv_cb.c:221): assert (!closed) failed
+[mpiexec@node177] ui_cmd_cb (./pm/pmiserv/pmiserv_pmci.c:128): unable to send SIGUSR1 downstream
+[mpiexec@node177] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node177] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node177] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion

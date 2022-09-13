@@ -1,0 +1,58 @@
+=================================================== BSF Target ====================================================
+Problem name: kb2
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	43	n = 68
+After conversion:  m =	109	n = 41
+Eps Min Dir Length:	0.001
+Eps Objective:		0.001
+Eps Shift:		0.001
+Eps Zero Compare:	0.001
+Eps Zero Direction:	0.001
+Exact Obj Value:	1749.9
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	3
+Number of low-cost variables:	2
+Number of zero-cost variables:	36
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	            16.5             -16             -12        -0.08757        -0.08757               0               0               0 ...
+Start point:	       96.632879       4.9534741       11.434162       47.630281       88.691257       11.186125       4.9485156    0.0008871968 ...	F(x) = 1366.0393
+Apex point:	       96.632879       4.9534741       11.434162       47.630281       88.691257       11.186125       4.9485156    0.0008871968 ...	F(x) = 1366.0393
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       96.632879       4.9534741       11.434162       47.630281       88.691257       11.186125       4.9485156    0.0008871968 ...	F(t) =        1366.0393
+Landing# 0. Elapsed time: 1
+u =		       96.633127       4.9531749       11.433843       47.630276       88.691251        11.18617       4.9481819   0.00088410373 ...	F(t) =         1366.052
+Landing# 100. Elapsed time: 123
+u =		       96.656602       4.9227327        11.40147        47.62972       88.690696       11.190658       4.9145377   0.00061132263 ...	F(t) =         1367.315
+Landing# 200. Elapsed time: 244
+u =		       96.677384        4.891124       11.368106       47.629154        88.69013       11.195172       4.8803048   0.00037704237 ...	F(t) =        1368.5641
+Landing# 300. Elapsed time: 364
+u =		       96.695543       4.8584713       11.333832        47.62858       88.689556       11.199708       4.8455418   0.00017916609 ...	F(t) =        1369.7976
+Landing# 400. Elapsed time: 484
+u =		       96.711257       4.8249219       11.298765       47.627999       88.688975       11.204265       4.8103244   1.2027596e-05 ...	F(t) =        1371.0145
+Landing# 500. Elapsed time: 603
+u =		       96.724751       4.7906149       11.263015       47.627413       88.688388       11.208836        4.774733   -0.0001279966 ...	F(t) =        1372.2152
+Landing# 600. Elapsed time: 722
+u =		       96.736277       4.7556848       11.226694       47.626822       88.687798       11.213422       4.7388307  -0.00024415422 ...	F(t) =        1373.4002
+slurmd[node152]: error: *** JOB 325690 CANCELLED AT 2022-08-30T09:15:26 ***
+[0:node152] unexpected disconnect completion event from [1:node169]
+Assertion failed in file ../../dapl_conn_rc.c at line 1128: 0
+internal ABORT - process 0
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+slurmd[node152]: error: *** STEP 325690.0 CANCELLED AT 2022-08-30T09:15:26 ***
+[mpiexec@node152] handle_exit_status (./pm/pmiserv/pmiserv_cb.c:538): assert (!closed) failed
+[mpiexec@node152] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node152] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node152] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion
+cat: /tmp/srun___logue: No such file or directory

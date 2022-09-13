@@ -1,0 +1,52 @@
+=================================================== BSF Target ====================================================
+Problem name: fit1d
+Number of Workers: 40
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	24	n = 1049
+After conversion:  m =	2077	n = 1026
+Eps Min Dir Length:	0.0001
+Eps Objective:		0.01
+Eps Shift:		0.0001
+Eps Zero Compare:	0.0001
+Eps Zero Direction:	0.0001
+Exact Obj Value:	9146.378
+Distance to Apex:	0
+Low Cost Percentile:	0
+Gap Max:		0.01
+Obj Vector Length:	1
+Start Shift Lengt:	0.1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	1026
+Number of low-cost variables:	0
+Number of zero-cost variables:	0
+Problem Scale:			3
+--------------- Data ---------------
+Obj Function:	           -1440            -800            -770            -710            -700            -660            -650            -600 ...
+Start point:	  -9.6517247e-05  -9.6520601e-05   -9.651523e-05  -9.6512552e-05  -9.6517479e-05  -9.6520631e-05  -9.9165267e-05  -8.7076599e-05 ...	F(x) = 8968.3701
+Apex point:	  -9.6517247e-05  -9.6520601e-05   -9.651523e-05  -9.6512552e-05  -9.6517479e-05  -9.6520631e-05  -9.9165267e-05  -8.7076599e-05 ...	F(x) = 8968.3701
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		  -9.6517247e-05  -9.6520601e-05   -9.651523e-05  -9.6512552e-05  -9.6517479e-05  -9.6520631e-05  -9.9165267e-05  -8.7076599e-05 ...	F(t) =        8968.3701
+Landing# 0. Elapsed time: 4
+u =		  -9.6517247e-05  -9.6520601e-05   -9.651523e-05  -9.6512552e-05  -9.6517479e-05  -9.6520631e-05  -9.9165267e-05   -8.711264e-05 ...	F(t) =        8968.3695
+Landing# 20. Elapsed time: 74
+u =		  -9.6527013e-05  -9.6530377e-05  -9.6524996e-05  -9.6532091e-05  -9.6527264e-05  -9.6530407e-05  -9.9165267e-05  -8.7814163e-05 ...	F(t) =        8968.3583
+Landing# 40. Elapsed time: 145
+u =		  -9.6546593e-05  -9.6530377e-05  -9.6524996e-05  -9.6532091e-05  -9.6527264e-05  -9.6530407e-05  -9.9165267e-05  -8.8475867e-05 ...	F(t) =        8968.3486
+Landing# 60. Elapsed time: 216
+u =		  -9.6556361e-05  -9.6540159e-05  -9.6544573e-05  -9.6541864e-05  -9.6546829e-05  -9.6540189e-05  -9.9165267e-05  -8.9106225e-05 ...	F(t) =        8968.3379
+Landing# 80. Elapsed time: 287
+u =		  -9.6556361e-05  -9.6559733e-05  -9.6554366e-05  -9.6551661e-05  -9.6556616e-05  -9.6559765e-05  -9.9165267e-05    -8.97021e-05 ...	F(t) =        8968.3257
+Landing# 100. Elapsed time: 357
+u =		  -9.6566137e-05  -9.6569503e-05  -9.6573926e-05  -9.6571228e-05  -9.6576163e-05  -9.6569534e-05  -9.9165267e-05  -9.0267961e-05 ...	F(t) =        8968.3125
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+slurmd[node117]: error: *** STEP 325733.0 CANCELLED AT 2022-08-30T20:30:46 ***
+slurmd[node117]: error: *** JOB 325733 CANCELLED AT 2022-08-30T20:30:46 ***
+[mpiexec@node117] handle_exit_status (./pm/pmiserv/pmiserv_cb.c:538): assert (!closed) failed
+[mpiexec@node117] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node117] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node117] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion

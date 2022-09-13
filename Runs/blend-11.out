@@ -1,0 +1,76 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.001
+Eps Objective:		0.0001
+Eps Shift:		0.001
+Eps Zero Compare:	0.001
+Eps Zero Direction:	0.001
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.02
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	17
+Number of low-cost variables:	13
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       1.5244199       0.9978216       3.4261123        7.506483        4.801783       12.262678       1.2962185       12.112565 ...	F(x) = 13.982388
+Apex point:	       1.5244199       0.9978216       3.4261123        7.506483        4.801783       12.262678       1.2962185       12.112565 ...	F(x) = 13.982388
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       1.5244199       0.9978216       3.4261123        7.506483        4.801783       12.262678       1.2962185       12.112565 ...	F(t) =        13.982388
+Landing# 0. Elapsed time: 6
+u =		       1.5247976      0.99814508        3.426328       7.5065734       4.8018852       12.262651       1.2960742       12.112566 ...	F(t) =        13.988198
+Optimal LCV not found!
+Landing# 100. Elapsed time: 588
+u =		       1.5636936       1.0311318       3.4480977       7.5153442       4.8118087       12.261082       1.2839315       12.113987 ...	F(t) =        14.553994
+Optimal LCV not found!
+Landing# 200. Elapsed time: 1186
+u =		        1.604218       1.0650267       3.4699549       7.5234504       4.8208302       12.261808       1.2774737       12.118111 ...	F(t) =        15.075765
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 300. Elapsed time: 1790
+u =		       1.6451491       1.0987849       3.4912481       7.5307178       4.8287283        12.26485       1.2768236       12.124911 ...	F(t) =        15.537569
+Landing# 400. Elapsed time: 2406
+u =		       1.6844285       1.1313033       3.5121505       7.5368422         4.83595       12.269994       1.2793426       12.134078 ...	F(t) =        15.937557
+Optimal LCV not found!
+Landing# 500. Elapsed time: 3034
+u =		       1.7218937       1.1624977       3.5325836       7.5421964       4.8420701       12.277814       1.2859026       12.146086 ...	F(t) =        16.277219
+Landing# 600. Elapsed time: 3681
+u =		       1.7599465       1.1928997        3.547314        7.546247       4.8485613       12.289457       1.2919502       12.162371 ...	F(t) =        16.563225
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 700. Elapsed time: 4362
+u =		       1.8005717       1.2217191       3.5469072       7.5469449       4.8587348       12.307912       1.2927496       12.185982 ...	F(t) =        16.773066
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 800. Elapsed time: 5068
+u =		       1.8392557       1.2459194       3.5334118       7.5448927       4.8718402       12.329683       1.2909072       12.211828 ...	F(t) =        16.904044
+Landing# 900. Elapsed time: 5817
+u =		       1.8757121       1.2678578       3.5148944       7.5421385       4.8834278       12.354345       1.2841914        12.24076 ...	F(t) =        16.994118
+Optimal LCV not found!
+Landing# 1000. Elapsed time: 6578
+u =		       1.9104475       1.2887865       3.4948314       7.5393898       4.8935074       12.381078       1.2725238       12.272187 ...	F(t) =         17.07211
+Landing# 1100. Elapsed time: 7344
+u =		       1.9449259       1.3091703       3.4746787        7.537328       4.9032969       12.408479       1.2585994        12.30453 ...	F(t) =        17.154642
+slurmd[node176]: error: *** JOB 325705 CANCELLED AT 2022-08-30T13:42:15 ***
+[0:node176] unexpected disconnect completion event from [2:node180]
+Assertion failed in file ../../dapl_conn_rc.c at line 1128: 0
+internal ABORT - process 0
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+slurmd[node176]: error: *** STEP 325705.0 CANCELLED AT 2022-08-30T13:42:15 ***
+/bin/rm: cannot remove `/tmp/srun___logue': No such file or directory

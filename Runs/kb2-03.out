@@ -1,0 +1,61 @@
+=================================================== BSF Target ====================================================
+Problem name: kb2
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	43	n = 68
+After conversion:  m =	109	n = 41
+Eps Min Dir Length:	0.01
+Eps Objective:		0.001
+Eps Shift:		0.01
+Eps Zero Compare:	0.01
+Eps Zero Direction:	0.01
+Exact Obj Value:	1749.9
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	0.1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	3
+Number of low-cost variables:	2
+Number of zero-cost variables:	36
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	            16.5             -16             -12        -0.08757        -0.08757               0               0               0 ...
+Start point:	       98.495949    -0.008864982   -0.0090279842       47.463861       88.600071       13.211349   -0.0093621467     0.032141151 ...	F(x) = 1613.5182
+Apex point:	       98.495949    -0.008864982   -0.0090279842       47.463861       88.600071       13.211349   -0.0093621467     0.032141151 ...	F(x) = 1613.5182
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       98.495949    -0.008864982   -0.0090279842       47.463861       88.600071       13.211349   -0.0093621467     0.032141151 ...	F(t) =        1613.5182
+Optimal LCV not found!
+         F(u) = 1613.5182 >= F(w) = 1613.3636
+Landing# 0. Elapsed time: 0
+u =		       98.491758   -0.0087392123   -0.0091789671       47.463709        88.59992       13.211349   -0.0089238337     0.032141151 ...	F(t) =        1613.4489
+Optimal LCV not found!
+         F(u) = 1613.4489 >= F(w) = 1613.2377
+Optimal LCV not found!
+         F(u) = 1613.3525 >= F(w) = 1613.2014
+Optimal LCV not found!
+         F(u) = 1613.2825 >= F(w) = 1613.0074
+Optimal LCV not found!
+         F(u) = 1613.3448 >= F(w) = 1613.2669
+Optimal LCV not found!
+         F(u) = 1613.2848 >= F(w) = 1612.9268
+Optimal LCV not found!
+         F(u) = 1613.3596 >= F(w) = 1613.1734
+Direction is too small!
+Maybe, you should increas PP_OBJECTIVE_VECTOR_LENGTH.
+=============================================
+Elapsed time: 0.35195208
+Iterations: 18724
+Optimal objective value:        1613.2754
+Exact objective value:             1749.9
+Relative error = 0.078075673
+=============================================
+Solution is saved into the file 'Problems/lp_kb2_so.mtx'.
+Solution:	     0.065825384       5.0609994       9.7984666      0.49038353               0       13.211349               0     0.032141151	...
+Ordered:	       98.481938               0               0       47.462607       88.598818       13.211349               0     0.032141151	...

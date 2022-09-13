@@ -1,0 +1,1417 @@
+=================================================== BSF Target ====================================================
+Problem name: kb2
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	43	n = 68
+After conversion:  m =	109	n = 41
+Eps Min Dir Length:	0.01
+Eps Objective:		0.01
+Eps Shift:		0.01
+Eps Zero Compare:	0.01
+Eps Zero Direction:	0.01
+Exact Obj Value:	1749.9
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	3
+Number of low-cost variables:	2
+Number of zero-cost variables:	36
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	            16.5             -16             -12        -0.08757        -0.08757               0               0               0 ...
+Start point:	       96.853424     0.095217324       1.5734051       47.752667        88.89468       13.083785     0.023675499    0.0012127321 ...	F(x) = 1565.711
+Apex point:	       96.853424     0.095217324       1.5734051       47.752667        88.89468       13.083785     0.023675499    0.0012127321 ...	F(x) = 1565.711
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       96.853424     0.095217324       1.5734051       47.752667        88.89468       13.083785     0.023675499    0.0012127321 ...	F(t) =         1565.711
+Landing# 0. Elapsed time: 0
+u =		       96.857745     0.094100914       1.5699533       47.752667        88.89468       13.084041     0.023585125    0.0012127321 ...	F(t) =        1565.8415
+Landing# 100. Elapsed time: 20
+u =		       97.221287      0.03212947       1.2049979       47.752667        88.89468       13.105166     0.021667296   -0.0041505291 ...	F(t) =         1577.211
+Landing# 200. Elapsed time: 51
+u =		       97.534112     0.041434288      0.87965134       47.752667        88.89468       13.123507       0.0333304   -0.0097189034 ...	F(t) =        1586.1279
+Landing# 300. Elapsed time: 89
+u =		       97.828661     0.061468195      0.58754196       47.752667        88.89468       13.142876     0.042614796   -0.0097351428 ...	F(t) =        1594.1727
+Landing# 400. Elapsed time: 134
+u =		       98.108541     0.087459112      0.33110379       47.752667        88.89468       13.156221     0.047767096   -0.0078179066 ...	F(t) =        1601.4521
+Landing# 500. Elapsed time: 181
+u =		       98.413976      0.06330551      0.14531825       47.752667        88.89468       13.165776     0.036522022   -0.0078179066 ...	F(t) =        1609.1077
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 600. Elapsed time: 206
+u =		       98.531352   -0.0086134542   -0.0079108546        47.73518       88.877193       13.170184    0.0037661031   -0.0050935988 ...	F(t) =        1614.0369
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 700. Elapsed time: 221
+u =		       98.528994   -0.0089849141   -0.0091465453       47.682087       88.824142       13.178516   -0.0082568423   -0.0063641806 ...	F(t) =        1614.0281
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 800. Elapsed time: 235
+u =		       98.535467   -0.0085197056   -0.0088506394       47.595658       88.791412       13.193992   -0.0086601207      0.01702145 ...	F(t) =        1614.1343
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 900. Elapsed time: 249
+u =		       98.538023   -0.0087113811   -0.0088701802       47.514184       88.748363       13.210616   -0.0092288091     0.035819186 ...	F(t) =        1614.1907
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1000. Elapsed time: 262
+u =		       98.543506    -0.009021791   -0.0088789606       47.467768       88.701946       13.219165    -0.009496427     0.033351725 ...	F(t) =        1614.2944
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1100. Elapsed time: 274
+u =		       98.539644   -0.0087165933   -0.0088929605       47.422013       88.656192       13.213869   -0.0093986663     0.062569737 ...	F(t) =        1614.2339
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1200. Elapsed time: 287
+u =		       98.546074   -0.0084159755   -0.0086995764       47.385447       88.619625       13.221089   -0.0091230023     0.093782574 ...	F(t) =        1614.3393
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1300. Elapsed time: 299
+u =		       98.545601   -0.0089614844    -0.009265241       47.324806       88.574358       13.232028   -0.0090193526     0.091173693 ...	F(t) =        1614.3563
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1400. Elapsed time: 311
+u =		       98.552332   -0.0085110809    -0.008880753       47.282387       88.531939       13.237469   -0.0093257177     0.076832676 ...	F(t) =         1614.463
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1500. Elapsed time: 324
+u =		        98.55403   -0.0087216764   -0.0090114243       47.239997       88.489549       13.240702   -0.0092636376     0.095453011 ...	F(t) =        1614.5034
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1600. Elapsed time: 337
+u =		       98.554592   -0.0089863102   -0.0091108509       47.200851       88.450404        13.25803   -0.0092890717      0.11814358 ...	F(t) =        1614.5249
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1700. Elapsed time: 348
+u =		        98.55799   -0.0084185364   -0.0087666695       47.156764       88.406316       13.254294   -0.0091489824      0.14906518 ...	F(t) =        1614.5755
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1800. Elapsed time: 360
+u =		       98.552141   -0.0095985714   -0.0093492331       47.095962       88.360889        13.26409   -0.0090669703      0.12162999 ...	F(t) =        1614.5141
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 1900. Elapsed time: 373
+u =		       98.555084   -0.0086138209    -0.008875278       47.060195       88.325121       13.242271   -0.0092722113      0.12343769 ...	F(t) =        1614.5475
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2000. Elapsed time: 385
+u =		       98.560985    -0.008965176   -0.0093861838       47.020922       88.278159       13.253636   -0.0095155882       0.1325952 ...	F(t) =        1614.6642
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2100. Elapsed time: 397
+u =		       98.563409   -0.0091574031   -0.0092087129        46.97358       88.223128       13.264101   -0.0092929251      0.14710813 ...	F(t) =        1614.7141
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2200. Elapsed time: 409
+u =		       98.563512   -0.0089038642   -0.0089596272       46.935995       88.185543       13.257495   -0.0089136887      0.12797007 ...	F(t) =        1614.7153
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2300. Elapsed time: 421
+u =		       98.571535   -0.0087041174   -0.0089025924       46.893587       88.143135       13.261177   -0.0091484486      0.13952168 ...	F(t) =        1614.8513
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2400. Elapsed time: 434
+u =		        98.56407   -0.0089602014   -0.0089897638       46.851067       88.100615       13.244363   -0.0090864411      0.13428075 ...	F(t) =        1614.7407
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2500. Elapsed time: 446
+u =		       98.571636   -0.0088435635   -0.0092031667       46.804401       88.053949        13.27159   -0.0089113565     0.095552806 ...	F(t) =        1614.8744
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2600. Elapsed time: 458
+u =		       98.572171   -0.0093419181    -0.008942676       46.765743       88.015291       13.271336   -0.0092910281     0.092726395 ...	F(t) =        1614.8948
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2700. Elapsed time: 470
+u =		        98.58002   -0.0090700122   -0.0089352907       46.716441       87.965989       13.285488   -0.0091093601     0.082892405 ...	F(t) =        1615.0285
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2800. Elapsed time: 482
+u =		       98.580179   -0.0088662359   -0.0091915372       46.677111       87.926659       13.300675   -0.0081237819     0.068912403 ...	F(t) =        1615.0379
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 2900. Elapsed time: 495
+u =		       98.581496   -0.0086352851    -0.008927695        46.62367       87.873218       13.311717   -0.0090445927     0.087963746 ...	F(t) =        1615.0621
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3000. Elapsed time: 508
+u =		       98.583902   -0.0089110191   -0.0088700797       46.577927       87.827475       13.316318   -0.0092171118      0.10213477 ...	F(t) =        1615.1135
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3100. Elapsed time: 519
+u =		       98.587589   -0.0088549031   -0.0091982538       46.532151       87.781699       13.303646   -0.0092508914     0.087505994 ...	F(t) =        1615.1854
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3200. Elapsed time: 532
+u =		       98.592919   -0.0088402381   -0.0087575405       46.489917       87.739465       13.303997   -0.0091419763     0.092977916 ...	F(t) =        1615.2752
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3300. Elapsed time: 545
+u =		       98.592142   -0.0091048809   -0.0089817251       46.437498       87.687046       13.314693   -0.0088896444      0.09021193 ...	F(t) =        1615.2785
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3400. Elapsed time: 557
+u =		       98.595092   -0.0084266619   -0.0089864147       46.390529       87.640077        13.30609   -0.0093001337     0.095428963 ...	F(t) =        1615.3246
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3500. Elapsed time: 569
+u =		       98.593503   -0.0086982832   -0.0091638006       46.347056       87.596604       13.308573   -0.0086683917      0.12546262 ...	F(t) =        1615.3125
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3600. Elapsed time: 582
+u =		        98.60284   -0.0085243075   -0.0095274755       46.297406       87.546954       13.306803   -0.0084595493      0.15314726 ...	F(t) =        1615.4768
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3700. Elapsed time: 594
+u =		       98.602698   -0.0089376888    -0.008913373        46.24376       87.493308       13.317218   -0.0089164823      0.17195957 ...	F(t) =        1615.4831
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3800. Elapsed time: 606
+u =		       98.607798   -0.0086713172   -0.0088395967       46.200142        87.44969       13.311275   -0.0093327983      0.15639287 ...	F(t) =        1615.5698
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 3900. Elapsed time: 619
+u =		        98.60437   -0.0086466698   -0.0091378303       46.160449       87.409997       13.334365   -0.0089195602      0.12396503 ...	F(t) =        1615.5233
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4000. Elapsed time: 632
+u =		       98.610641   -0.0086424153   -0.0089810693       46.113405       87.362953       13.324549   -0.0093838132      0.14779509 ...	F(t) =        1615.6331
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4100. Elapsed time: 645
+u =		       98.617251   -0.0092570154     -0.00909266       46.050533       87.300081       13.328449   -0.0081870557      0.15332541 ...	F(t) =        1615.7643
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4200. Elapsed time: 657
+u =		       98.614354   -0.0089398321    -0.009271467       46.002496       87.252044       13.329623   -0.0093902077      0.13594684 ...	F(t) =         1615.722
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4300. Elapsed time: 670
+u =		       98.620153   -0.0089416034   -0.0089444404       45.964845       87.214393       13.352811   -0.0095180874     0.083341162 ...	F(t) =        1615.8204
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4400. Elapsed time: 682
+u =		        98.61545   -0.0091944433   -0.0091727788       45.930701       87.180249       13.358161   -0.0091750131     0.086727803 ...	F(t) =        1615.7556
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4500. Elapsed time: 694
+u =		       98.619802   -0.0087548173   -0.0088044045       45.890018       87.139566       13.371943    -0.009413486     0.094606605 ...	F(t) =        1615.8231
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4600. Elapsed time: 707
+u =		       98.626256   -0.0090975707   -0.0093025677       45.856015       87.105563       13.337108   -0.0091358056     0.095847919 ...	F(t) =         1615.947
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4700. Elapsed time: 720
+u =		       98.627229    -0.008865934   -0.0094558802       45.789654        87.06227       13.348385   -0.0089602873     0.085646503 ...	F(t) =        1615.9708
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4800. Elapsed time: 732
+u =		       98.622153   -0.0092916875   -0.0091138044       45.745371       87.017986       13.353571   -0.0084570265     0.083277149 ...	F(t) =        1615.8975
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 4900. Elapsed time: 744
+u =		       98.627455   -0.0091567764   -0.0090817176       45.692347       86.964962       13.366873   -0.0093000028     0.070647805 ...	F(t) =        1615.9917
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5000. Elapsed time: 756
+u =		       98.635026   -0.0088413761   -0.0088536993       45.644357       86.916972       13.351384   -0.0086154881     0.056341568 ...	F(t) =        1616.1172
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5100. Elapsed time: 768
+u =		       98.629796   -0.0093140591   -0.0087522517       45.602847       86.875463       13.358946   -0.0093154341     0.056765787 ...	F(t) =        1616.0446
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5200. Elapsed time: 780
+u =		       98.637858   -0.0087877112   -0.0088903548       45.566427       86.839043       13.366682   -0.0093393077     0.019716805 ...	F(t) =        1616.1772
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5300. Elapsed time: 793
+u =		       98.637773   -0.0089878118    -0.008941804       45.528483       86.801099       13.360793   -0.0091147641     0.036253445 ...	F(t) =        1616.1863
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5400. Elapsed time: 805
+u =		       98.639908   -0.0090237352   -0.0088869067       45.476544        86.74916        13.35956   -0.0091330916     0.033680695 ...	F(t) =        1616.2305
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5500. Elapsed time: 818
+u =		       98.642768   -0.0087034195   -0.0089441616       45.424869       86.697485       13.337912   -0.0093454387     0.036813935 ...	F(t) =        1616.2823
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5600. Elapsed time: 831
+u =		        98.64532   -0.0087133908   -0.0089025618       45.382416       86.655032       13.326372   -0.0089345956      0.03500377 ...	F(t) =        1616.3315
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5700. Elapsed time: 843
+u =		       98.644956   -0.0095378451   -0.0093372106       45.340779       86.613395       13.319562   -0.0088870708     0.021390151 ...	F(t) =        1616.3512
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5800. Elapsed time: 855
+u =		       98.653833   -0.0080496681   -0.0088396169        45.28693       86.559546       13.343644   -0.0091478253      0.03250173 ...	F(t) =        1616.4773
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 5900. Elapsed time: 867
+u =		       98.658273   -0.0082119198   -0.0086331485       45.246723       86.519339       13.330001   -0.0096418199     0.038560023 ...	F(t) =        1616.5577
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6000. Elapsed time: 878
+u =		       98.653255   -0.0093972484   -0.0087139232       45.205379       86.477995       13.321748    -0.008801156     0.036256486 ...	F(t) =        1616.5021
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6100. Elapsed time: 890
+u =		       98.656201   -0.0091537316     -0.00920195        45.15581       86.428426       13.282914   -0.0094569682     0.025453186 ...	F(t) =        1616.5614
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6200. Elapsed time: 903
+u =		       98.657028   -0.0088563741    -0.009044319       45.121192       86.393808       13.286597   -0.0093460267     0.015834482 ...	F(t) =        1616.5744
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6300. Elapsed time: 917
+u =		       98.662842   -0.0089355512   -0.0089380831       45.082076       86.354692       13.317167   -0.0093018205     0.028266936 ...	F(t) =        1616.6772
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6400. Elapsed time: 930
+u =		       98.662197   -0.0090053266   -0.0091049804        45.02365       86.296265        13.28557   -0.0088810472     0.021424947 ...	F(t) =        1616.6799
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6500. Elapsed time: 942
+u =		       98.668313   -0.0085854293   -0.0088268949       44.983018       86.255633       13.280484   -0.0093993698      0.01400981 ...	F(t) =        1616.7779
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6600. Elapsed time: 954
+u =		       98.664156   -0.0086882585   -0.0091344341       44.941556       86.214172       13.300782   -0.0091644348     0.011506106 ...	F(t) =        1616.7219
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6700. Elapsed time: 967
+u =		       98.666721   -0.0088878239   -0.0090915923       44.904942       86.177558        13.28843   -0.0090271509     0.033856925 ...	F(t) =        1616.7733
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6800. Elapsed time: 979
+u =		       98.669974   -0.0094027348   -0.0090894092       44.848414        86.12103       13.289349   -0.0088257933     0.030286193 ...	F(t) =        1616.8451
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 6900. Elapsed time: 991
+u =		       98.673577   -0.0091790974   -0.0090874993       44.807883       86.080498       13.301306   -0.0092311634     0.039980363 ...	F(t) =         1616.908
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7000. Elapsed time: 1004
+u =		       98.677222   -0.0082905031    -0.008558599       44.766734        86.03935       13.290214   -0.0091788405     0.039181042 ...	F(t) =        1616.9548
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7100. Elapsed time: 1017
+u =		       98.676025   -0.0091697107   -0.0090210475       44.725083       85.997698       13.286231   -0.0092855271     0.084270292 ...	F(t) =         1616.962
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7200. Elapsed time: 1029
+u =		       98.678651   -0.0087897076   -0.0088228062       44.667622       85.940238       13.282507   -0.0093454991     0.087931331 ...	F(t) =        1617.0069
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7300. Elapsed time: 1042
+u =		       98.682954   -0.0093024437   -0.0086927722       44.620441       85.893056       13.295128   -0.0094363618     0.071427459 ...	F(t) =        1617.0928
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7400. Elapsed time: 1054
+u =		        98.68929   -0.0085646976   -0.0086841836       44.571622       85.844238       13.288469    -0.009420146      0.09435654 ...	F(t) =         1617.194
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7500. Elapsed time: 1065
+u =		       98.688032   -0.0085542728   -0.0086509788       44.534452       85.807068        13.24394   -0.0087642242     0.096730422 ...	F(t) =        1617.1792
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7600. Elapsed time: 1078
+u =		       98.689714   -0.0085227705   -0.0090412763       44.485528       85.758143       13.238752   -0.0091346982      0.10548824 ...	F(t) =        1617.2197
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7700. Elapsed time: 1090
+u =		       98.694562   -0.0092216956   -0.0091235294       44.444061       85.716677        13.26789    -0.009146579     0.087018363 ...	F(t) =        1617.3191
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7800. Elapsed time: 1102
+u =		       98.696271   -0.0088161625   -0.0092068079       44.402135       85.674751       13.262871   -0.0091625736     0.083240066 ...	F(t) =        1617.3492
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 7900. Elapsed time: 1114
+u =		       98.700368   -0.0085860644   -0.0090058688       44.347745       85.620361       13.258298   -0.0091926962     0.095109452 ...	F(t) =        1617.4202
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8000. Elapsed time: 1126
+u =		       98.698644   -0.0091336656   -0.0089046056       44.307324       85.579939         13.2514   -0.0084069013     0.083639127 ...	F(t) =        1617.4064
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8100. Elapsed time: 1139
+u =		       98.704593   -0.0088651634   -0.0091246866       44.263049       85.535664       13.271611   -0.0092136857     0.089215683 ...	F(t) =        1617.5106
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8200. Elapsed time: 1151
+u =		       98.706002   -0.0093890264   -0.0086735988        44.21108       85.483696       13.266631   -0.0090105438     0.086676719 ...	F(t) =         1617.546
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8300. Elapsed time: 1163
+u =		       98.706227   -0.0089046897   -0.0092602205        44.18027       85.452886       13.292794   -0.0089323903     0.075887253 ...	F(t) =        1617.5544
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8400. Elapsed time: 1176
+u =		       98.712172   -0.0088505459   -0.0092348464       44.130663       85.403279       13.300875    -0.009174049     0.096113322 ...	F(t) =          1617.66
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8500. Elapsed time: 1189
+u =		       98.712152   -0.0086615074   -0.0091002469       44.087327       85.359943       13.310205   -0.0094402343     0.099259915 ...	F(t) =        1617.6626
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8600. Elapsed time: 1201
+u =		       98.713956    -0.008644392    -0.009121304       44.040282       85.312898       13.310271   -0.0094587831     0.086670361 ...	F(t) =        1617.7006
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8700. Elapsed time: 1213
+u =		       98.714853   -0.0085865323   -0.0087637821       44.000338       85.272954       13.305094   -0.0091709869     0.079843035 ...	F(t) =        1617.7172
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8800. Elapsed time: 1225
+u =		       98.716882   -0.0091748318   -0.0090107369       43.946368       85.218984       13.297681   -0.0086311962     0.088937989 ...	F(t) =        1617.7725
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 8900. Elapsed time: 1237
+u =		       98.717345    -0.009220226   -0.0088675829       43.904159       85.176775       13.332791   -0.0092500803      0.07428779 ...	F(t) =        1617.7865
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9000. Elapsed time: 1250
+u =		       98.730268   -0.0089767351   -0.0094372914        43.84906       85.121676       13.346579   -0.0096358427      0.09783308 ...	F(t) =        1618.0123
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9100. Elapsed time: 1263
+u =		       98.724061   -0.0092056821   -0.0087992793       43.801332       85.066259       13.345104   -0.0093676467     0.085223118 ...	F(t) =         1617.915
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9200. Elapsed time: 1276
+u =		       98.734104   -0.0080239468   -0.0087167464       43.752141       85.017069       13.349546   -0.0092801222     0.096751506 ...	F(t) =        1618.0694
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9300. Elapsed time: 1288
+u =		       98.730297    -0.008695263    -0.009043679       43.702187       84.967115       13.355733   -0.0092550679     0.075620935 ...	F(t) =          1618.03
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9400. Elapsed time: 1301
+u =		        98.73577   -0.0088352408   -0.0088366987        43.66403       84.928957       13.369743   -0.0094111082     0.089707933 ...	F(t) =        1618.1267
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Landing# 9500. Elapsed time: 1314
+u =		       98.735214   -0.0089399751   -0.0094797957       43.621811       84.886738       13.382166   -0.0091074263     0.084651087 ...	F(t) =        1618.1343
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+Optimal LCV not found!
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+slurmd[node124]: error: *** STEP 325739.0 CANCELLED AT 2022-08-30T21:07:17 ***
+slurmd[node124]: error: *** JOB 325739 CANCELLED AT 2022-08-30T21:07:17 ***
+[mpiexec@node124] handle_exit_status (./pm/pmiserv/pmiserv_cb.c:538): assert (!closed) failed
+[mpiexec@node124] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node124] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node124] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion

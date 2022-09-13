@@ -1,0 +1,43 @@
+=================================================== BSF Target ====================================================
+Problem name: adlittle
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	56	n = 138
+After conversion:  m =	166	n = 96
+Eps Zero Compare:	0.01
+Eps Min Dir Length:	0.001
+Eps Objective:		250
+Eps Shift:		0.0001
+Eps Zero Direction:	1e-05
+Exact Obj Value:	-225494.96
+Distance to Apex:	0
+Low Cost Percentile:	2
+Gap Max:		0.2
+Obj Vector Length:	0.1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	0
+Number of low-cost variables:	82
+Number of zero-cost variables:	14
+Problem Scale:			20188.462
+--------------- Data ---------------
+Obj Function:	           -3310            3280            3280            2600            2600           -2100            1890            1890 ...
+Start point:	       4.6066203      0.33619533       23.057629   -0.0088313628       3.1270255   -0.0083746118        2.631521        4.398696 ...	F(x) = -225713.4
+Apex point:	       4.6066203      0.33619533       23.057629   -0.0088313628       3.1270255   -0.0083746118        2.631521        4.398696 ...	F(x) = -225713.4
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       4.6066203      0.33619533       23.057629   -0.0088313628       3.1270255   -0.0083746118        2.631521        4.398696 ...	F(t) =        -225713.4
+=============================================
+Elapsed time: 0.0019979477
+Iterations: 56
+Optimal objective value:       -225713.24
+Exact objective value:         -225494.96
+Relative error = 0.00096796953
+=============================================
+Solution is saved into the file 'Problems/lp_adlittle_so.mtx'.
+Solution:	         23.0576      0.33619179       4.6066122   -0.0095101712      0.74080044       36.386221       2.6315226       5.0901056	...
+Ordered:	       4.6066122      0.33619179         23.0576   -0.0088318971       3.1270306   -0.0083866395       2.6315226       4.3986967	...

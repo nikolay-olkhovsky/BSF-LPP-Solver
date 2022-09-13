@@ -1,0 +1,41 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.001
+Eps Objective:		0.001
+Eps Shift:		0.001
+Eps Zero Compare:	0.0001
+Eps Zero Direction:	0.001
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.02
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	17
+Number of low-cost variables:	13
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       2.0609675        1.865586       2.9870245       7.3774956       4.7440274       12.406079       1.4290573       12.222395 ...	F(x) = 17.288349
+Apex point:	       2.0609675        1.865586       2.9870245       7.3774956       4.7440274       12.406079       1.4290573       12.222395 ...	F(x) = 17.288349
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 256087. Elapsed time: 6
+u =		       1.5241347      0.99774275       3.4258487       7.5064191       4.8016739       12.262689       1.2964269       12.112542 ...	F(t) =        13.978145
+Landing# 0. Elapsed time: 83
+u =		       1.5244199       0.9978216       3.4261123        7.506483        4.801783       12.262678       1.2962185       12.112565 ...	F(t) =        13.982388
+slurmd[node176]: error: *** JOB 325696 CANCELLED AT 2022-08-30T11:34:49 ***
+[0:node176] unexpected disconnect completion event from [2:node241]
+Assertion failed in file ../../dapl_conn_rc.c at line 1128: 0
+internal ABORT - process 0
+srun: Job step aborted: Waiting up to 2 seconds for job step to finish.
+APPLICATION TERMINATED WITH THE EXIT STRING: Terminated (signal 15)

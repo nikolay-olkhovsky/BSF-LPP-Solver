@@ -1,0 +1,57 @@
+=================================================== BSF Target ====================================================
+Problem name: kb2
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	43	n = 68
+After conversion:  m =	109	n = 41
+Eps Min Dir Length:	0.01
+Eps Objective:		0.01
+Eps Shift:		0.01
+Eps Zero Compare:	0.01
+Eps Zero Direction:	0.01
+Exact Obj Value:	1749.9
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	3
+Number of low-cost variables:	2
+Number of zero-cost variables:	36
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	            16.5             -16             -12        -0.08757        -0.08757               0               0               0 ...
+Start point:	        100.9277   -0.0087733524   -0.0091385238   -0.0097463654       35.684415       13.398897   -0.0088407138     0.036853159 ...	F(x) = 1662.4331
+Apex point:	        100.9277   -0.0087733524   -0.0091385238   -0.0097463654       35.684415       13.398897   -0.0088407138     0.036853159 ...	F(x) = 1662.4331
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		        100.9277   -0.0087733524   -0.0091385238   -0.0097463654       35.684415       13.398897   -0.0088407138     0.036853159 ...	F(t) =        1662.4331
+Landing# 0. Elapsed time: 0
+u =		       100.93294   -0.0086600406   -0.0091385238   -0.0097463654       35.683894       13.399145   -0.0089525216     0.036853159 ...	F(t) =        1662.5177
+Landing# 10000. Elapsed time: 15
+u =		       101.17719   -0.0092850383   -0.0089489194   -0.0097585515       29.066627       13.395843   -0.0088826126      0.03074906 ...	F(t) =        1667.1351
+Landing# 20000. Elapsed time: 30
+u =		       101.41158   -0.0093805923   -0.0092774001   -0.0097017029       22.461953        13.39479   -0.0090488466     0.024683958 ...	F(t) =        1671.5863
+Landing# 30000. Elapsed time: 45
+u =		       101.65221   -0.0088997144   -0.0092303033   -0.0097286687       15.871476       13.391177   -0.0092002289     0.015987695 ...	F(t) =        1676.1256
+Landing# 40000. Elapsed time: 60
+u =		        101.8964   -0.0087680506   -0.0092587496   -0.0097702731       9.2370484       13.387764   -0.0093211896    0.0078831755 ...	F(t) =         1680.734
+Landing# 50000. Elapsed time: 75
+u =		       102.13965   -0.0088252047   -0.0091894912    -0.009756059       2.6546919       13.384241   -0.0092174057  -8.2219495e-05 ...	F(t) =        1685.3241
+Direction is too small!
+Maybe, you should increas PP_OBJECTIVE_VECTOR_LENGTH.
+=============================================
+Elapsed time: 77.939726
+Iterations: 4561104
+Optimal objective value:        1686.2857
+Exact objective value:             1749.9
+Relative error = 0.03635313
+=============================================
+Solution is saved into the file 'Problems/lp_kb2_so.mtx'.
+Solution:	               0       6.4645115       9.3744781      0.35996486               0       13.379951               0               0	...
+Ordered:	       102.19171               0               0               0       1.5258002       13.379951               0               0	...

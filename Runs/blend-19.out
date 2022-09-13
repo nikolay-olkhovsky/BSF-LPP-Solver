@@ -1,0 +1,75 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.0009
+Eps Objective:		0.001
+Eps Shift:		1e-05
+Eps Zero Compare:	0.0009
+Eps Zero Direction:	1e-05
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.02
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	17
+Number of low-cost variables:	13
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       6.3361306       5.0873393       6.2060957        5.107518       4.2986915       20.894649       1.3968066       10.229484 ...	F(x) = 30.987537
+Apex point:	       6.3361306       5.0873393       6.2060957        5.107518       4.2986915       20.894649       1.3968066       10.229484 ...	F(x) = 30.987537
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 8489. Elapsed time: 0
+u =		       6.1875783       5.0604573       6.2235499       5.1191229       4.2956415       20.892262       1.3826099       10.225881 ...	F(t) =        30.251443
+Landing# 0. Elapsed time: 0
+u =		        6.187579       5.0604605       6.2235519       5.1191252       4.2956414       20.892262       1.3826101       10.225882 ...	F(t) =        30.251484
+Landing# 100. Elapsed time: 11
+u =		       6.1876347       5.0607936        6.223744       5.1193622       4.2956413       20.892205       1.3826364       10.225936 ...	F(t) =        30.255555
+Landing# 200. Elapsed time: 21
+u =		       6.1876983       5.0611283        6.223935       5.1195981       4.2956411       20.892149       1.3826644        10.22599 ...	F(t) =        30.259657
+Landing# 300. Elapsed time: 32
+u =		       6.1877552       5.0614632       6.2241246       5.1198343       4.2956412       20.892093       1.3826911       10.226045 ...	F(t) =        30.263726
+Landing# 400. Elapsed time: 42
+u =		       6.1878111       5.0617977       6.2243126       5.1200703       4.2956407       20.892037       1.3827175       10.226099 ...	F(t) =        30.267779
+Landing# 500. Elapsed time: 53
+u =		       6.1878723       5.0621327       6.2244992       5.1203056       4.2956407       20.891981       1.3827457       10.226152 ...	F(t) =        30.271848
+Landing# 600. Elapsed time: 63
+u =		       6.1879384       5.0624695       6.2246837       5.1205413       4.2956407       20.891925       1.3827729       10.226207 ...	F(t) =        30.275943
+Landing# 700. Elapsed time: 73
+u =		       6.1879976       5.0628075        6.224867       5.1207772       4.2956405       20.891869       1.3828004       10.226261 ...	F(t) =        30.280006
+Landing# 800. Elapsed time: 84
+u =		       6.1880626       5.0631453       6.2250489        5.121012       4.2956399       20.891813       1.3828295       10.226315 ...	F(t) =        30.284078
+Landing# 900. Elapsed time: 94
+u =		       6.1881194       5.0634837       6.2252303       5.1212473       4.2956399       20.891756       1.3828566       10.226369 ...	F(t) =         30.28812
+Landing# 1000. Elapsed time: 104
+u =		       6.1881824       5.0638237       6.2254089       5.1214822       4.2956398         20.8917        1.382885       10.226423 ...	F(t) =        30.292181
+Landing# 1100. Elapsed time: 115
+u =		       6.1882419       5.0641641       6.2255859       5.1217171       4.2956395       20.891644       1.3829137       10.226477 ...	F(t) =        30.296216
+Landing# 1200. Elapsed time: 125
+u =		       6.1883024       5.0645051       6.2257609       5.1219526       4.2956391       20.891588       1.3829411        10.22653 ...	F(t) =        30.300259
+Landing# 1300. Elapsed time: 135
+u =		       6.1883623       5.0648465       6.2259337       5.1221879       4.2956385       20.891532       1.3829688       10.226585 ...	F(t) =        30.304288
+Landing# 1400. Elapsed time: 145
+u =		       6.1884255       5.0651906       6.2261046       5.1224221       4.2956381       20.891476       1.3829981       10.226638 ...	F(t) =        30.308326
+Landing# 1500. Elapsed time: 156
+u =		       6.1884969       5.0655354       6.2262742        5.122655       4.2956378        20.89142       1.3830291       10.226692 ...	F(t) =        30.312391
+Landing# 1600. Elapsed time: 166
+u =		       6.1885597       5.0658809       6.2264424       5.1228889        4.295637       20.891365       1.3830583       10.226746 ...	F(t) =        30.316415
+Landing# 1700. Elapsed time: 176
+u =		       6.1886244       5.0662261       6.2266088       5.1231223       4.2956365       20.891309       1.3830881         10.2268 ...	F(t) =        30.320439
+slurmd[node124]: error: *** JOB 325748 CANCELLED AT 2022-08-30T21:37:59 ***
+slurmd[node124]: error: *** STEP 325748.0 CANCELLED AT 2022-08-30T21:37:59 ***
+[mpiexec@node124] handle_exit_status (./pm/pmiserv/pmiserv_cb.c:538): assert (!closed) failed
+[mpiexec@node124] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node124] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node124] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion

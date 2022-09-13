@@ -1,0 +1,43 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.001
+Eps Objective:		1e-06
+Eps Shift:		0.001
+Eps Zero Compare:	0.001
+Eps Zero Direction:	0.001
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.02
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	17
+Number of low-cost variables:	13
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       6.3361306       5.0873393       6.2060957        5.107518       4.2986915       20.894649       1.3968066       10.229484 ...	F(x) = 30.987537
+Apex point:	       6.3361306       5.0873393       6.2060957        5.107518       4.2986915       20.894649       1.3968066       10.229484 ...	F(x) = 30.987537
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       6.3361306       5.0873393       6.2060957        5.107518       4.2986915       20.894649       1.3968066       10.229484 ...	F(t) =        30.987537
+=============================================
+Elapsed time: 0.078704119
+Iterations: 3426
+Optimal objective value:        30.989705
+Exact objective value:             30.812
+Relative error = 0.0057673955
+=============================================
+Solution is saved into the file 'Problems/lp_blend_so.mtx'.
+Solution:	        20.89464       10.229485       11.221579       2.9992432      0.54273799      0.28178803    0.0019377193       5.4742467	...
+Ordered:	       6.3363976       5.0874671       6.2062207        5.107446       4.2986932        20.89464        1.396816       10.229485	...

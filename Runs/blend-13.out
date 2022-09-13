@@ -1,0 +1,47 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.001
+Eps Objective:		0.0001
+Eps Shift:		0.001
+Eps Zero Compare:	0.001
+Eps Zero Direction:	0.001
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.02
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	false
+--------------- Statisics ---------------
+Number of high-cost variables:	17
+Number of low-cost variables:	13
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       2.5826327       1.6757222       3.0745348       7.6570538       5.1543358       13.006523      0.97238212       13.060206 ...	F(x) = 18.725603
+Apex point:	       2.5826327       1.6757222       3.0745348       7.6570538       5.1543358       13.006523      0.97238212       13.060206 ...	F(x) = 18.725603
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       2.5826327       1.6757222       3.0745348       7.6570538       5.1543358       13.006523      0.97238212       13.060206 ...	F(t) =        18.725603
+Landing# 0. Elapsed time: 0
+u =		        2.582794       1.6758427        3.074354       7.6572461       5.1544844       13.006777      0.97223699       13.060573 ...	F(t) =        18.726035
+         F(u) = 18.727164 == F(w) = 18.727118
+Maybe, you should decreas PP_EPS_OBJ.
+=============================================
+Elapsed time: 0.375664
+Iterations: 15358
+Optimal objective value:        18.727164
+Exact objective value:             30.812
+Relative error = 0.392212
+=============================================
+Solution is saved into the file 'Problems/lp_blend_so.mtx'.
+Solution:	       13.007545       13.061681       6.9861103       3.8283493               0     0.042514937    0.0033677376       1.1351655	...
+Ordered:	        2.583318       1.6761621       3.0737985        7.657814       5.1549159       13.007545      0.97179908       13.061681	...

@@ -1,0 +1,234 @@
+=================================================== BSF Target ====================================================
+Problem name: blend
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	74	n = 114
+After conversion:  m =	196	n = 81
+Eps Min Dir Length:	0.01
+Eps Objective:		0.01
+Eps Shift:		0.01
+Eps Zero Compare:	0.01
+Eps Zero Direction:	0.01
+Exact Obj Value:	30.812
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	10
+Number of low-cost variables:	20
+Number of zero-cost variables:	51
+Problem Scale:			26.32
+--------------- Data ---------------
+Obj Function:	            5.36            5.08            4.51             4.2             3.6            -3.2              -3           -2.87 ...
+Start point:	       1.1033181      0.42925992       2.8440484       6.8123302       4.2337709       10.396769       1.9844678       9.1342635 ...	F(x) = 13.709976
+Apex point:	       1.1033181      0.42925992       2.8440484       6.8123302       4.2337709       10.396769       1.9844678       9.1342635 ...	F(x) = 13.709976
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       1.1033181      0.42925992       2.8440484       6.8123302       4.2337709       10.396769       1.9844678       9.1342635 ...	F(t) =        13.709976
+Landing# 0. Elapsed time: 2
+u =		        1.107431      0.43308122       2.8466659       6.8140896       4.2347776       10.395925       1.9836272       9.1335497 ...	F(t) =        13.785603
+Landing# 50. Elapsed time: 114
+u =		       1.3146786      0.61062067       2.9607923        6.887147       4.2658601       10.382443       1.9815762       9.1356368 ...	F(t) =        16.795009
+Landing# 100. Elapsed time: 246
+u =		       1.4951068      0.75252818       3.0242527       6.9137992        4.283974       10.422354       2.0653256       9.1910962 ...	F(t) =        18.181119
+Optimal LCV not found!
+Landing# 150. Elapsed time: 387
+u =		       1.6599951      0.87096059       3.0634983       6.9109616        4.304975       10.485888        2.182653       9.2645138 ...	F(t) =        18.865771
+Landing# 200. Elapsed time: 534
+u =		       1.8225101      0.98576141       3.1185665       6.9107192       4.3323553       10.549182         2.29264        9.334741 ...	F(t) =        19.693395
+Landing# 250. Elapsed time: 693
+u =		       1.9608148       1.0756955       3.1340385       6.9244951       4.3603201       10.610208       2.3896814       9.4090466 ...	F(t) =        20.219716
+Landing# 300. Elapsed time: 854
+u =		       2.0845943        1.152855       3.1116841       6.9559206       4.3872308       10.670999       2.4676378       9.4865374 ...	F(t) =        20.550782
+Optimal LCV not found!
+Landing# 350. Elapsed time: 1014
+u =		       2.2211983       1.2425871       3.0970511       6.9915077       4.4140387       10.723478       2.5345515       9.5574984 ...	F(t) =        21.168538
+Optimal LCV not found!
+Landing# 400. Elapsed time: 1179
+u =		       2.3716419       1.3347891       3.0805546       6.9750522       4.4499654       10.791117       2.5890239       9.6423745 ...	F(t) =        21.667622
+Optimal LCV not found!
+Landing# 450. Elapsed time: 1347
+u =		       2.5172057       1.4259542        3.062099       6.9465508       4.4878202       10.861916       2.6302738       9.7302191 ...	F(t) =        22.104948
+Landing# 500. Elapsed time: 1515
+u =		       2.6104073       1.5597364       3.0668474       6.9109304       4.5227986        10.93457       2.6646304       9.8198882 ...	F(t) =        22.542414
+Optimal LCV not found!
+         F(u) = 22.815697 >= F(w) = 22.708233
+Landing# 550. Elapsed time: 1684
+u =		       2.6835214       1.6974362       3.0582053       6.9058148       4.5559031        11.00653        2.718833       9.9071976 ...	F(t) =        22.912989
+Landing# 600. Elapsed time: 1854
+u =		        2.743836       1.8257431       3.0380202       6.9166906       4.5862783       11.068039       2.7778912       9.9906089 ...	F(t) =        23.210615
+Optimal LCV not found!
+         F(u) = 23.413136 >= F(w) = 23.163659
+Optimal LCV not found!
+         F(u) = 23.387779 >= F(w) = 23.216097
+Optimal LCV not found!
+         F(u) = 23.387803 >= F(w) = 23.236114
+Landing# 650. Elapsed time: 2027
+u =		        2.803759       1.9581226       3.0133881       6.9266808       4.6043137       11.141947       2.8302221       10.093937 ...	F(t) =        23.445307
+Optimal LCV not found!
+Landing# 700. Elapsed time: 2207
+u =		       2.8615942       2.0846132       2.9894081       6.9379274       4.6088154       11.229838        2.834628       10.220219 ...	F(t) =         23.70207
+Optimal LCV not found!
+         F(u) = 23.732569 >= F(w) = 23.545235
+Optimal LCV not found!
+         F(u) = 23.791042 >= F(w) = 23.654175
+Landing# 750. Elapsed time: 2389
+u =		       2.9186476       2.2117516        2.963911       6.9491032       4.6144805       11.322629        2.835226       10.351723 ...	F(t) =        23.975068
+Optimal LCV not found!
+         F(u) = 24.165234 >= F(w) = 23.951514
+Landing# 800. Elapsed time: 2571
+u =		       2.9757054       2.3366834       2.9402717       6.9592124       4.6157432        11.41309       2.8350331       10.479664 ...	F(t) =        24.251809
+Optimal LCV not found!
+         F(u) = 24.263095 >= F(w) = 24.09616
+Optimal LCV not found!
+         F(u) = 24.357672 >= F(w) = 24.060437
+Landing# 850. Elapsed time: 2752
+u =		        3.033147       2.4129057        2.964483       6.9751762       4.6216608       11.507391       2.8333128       10.612188 ...	F(t) =        24.525931
+Optimal LCV not found!
+         F(u) = 24.552989 >= F(w) = 24.403747
+Optimal LCV not found!
+         F(u) = 24.576243 >= F(w) = 24.395036
+Optimal LCV not found!
+         F(u) = 24.631538 >= F(w) = 24.394491
+Optimal LCV not found!
+         F(u) = 24.706284 >= F(w) = 24.504114
+Landing# 900. Elapsed time: 2933
+u =		       3.0912994       2.4615336       3.0193841       6.9882934       4.6269387       11.598772       2.8275688       10.753249 ...	F(t) =        24.755746
+Optimal LCV not found!
+         F(u) = 24.785924 >= F(w) = 24.550644
+Optimal LCV not found!
+         F(u) = 24.906049 >= F(w) = 24.792569
+Optimal LCV not found!
+         F(u) = 24.980262 >= F(w) = 24.664026
+Landing# 950. Elapsed time: 3114
+u =		       3.1524092       2.5105788       3.0779073       7.0030971       4.6343206         11.6942       2.8175089       10.898564 ...	F(t) =        25.020619
+Optimal LCV not found!
+         F(u) = 25.065177 >= F(w) = 24.824775
+Optimal LCV not found!
+Landing# 1000. Elapsed time: 3302
+u =		       3.2089682       2.5564588       3.1331131       7.0167702       4.6323331       11.785479       2.8100535       11.037945 ...	F(t) =        25.232257
+Optimal LCV not found!
+         F(u) = 25.345048 >= F(w) = 25.156413
+Optimal LCV not found!
+         F(u) = 25.421346 >= F(w) = 25.27246
+Optimal LCV not found!
+         F(u) = 25.475577 >= F(w) = 25.297066
+Landing# 1050. Elapsed time: 3483
+u =		       3.2666665       2.6024323        3.189661       7.0360201       4.6415431       11.882663       2.8060211       11.177933 ...	F(t) =        25.492521
+Optimal LCV not found!
+         F(u) = 25.596138 >= F(w) = 25.404728
+Landing# 1100. Elapsed time: 3665
+u =		       3.3241614       2.6490341        3.244988       7.0613969       4.6496286       11.985713       2.7951413       11.316871 ...	F(t) =        25.767257
+Optimal LCV not found!
+         F(u) = 25.844311 >= F(w) = 25.749199
+Optimal LCV not found!
+         F(u) = 25.907341 >= F(w) = 25.797498
+Optimal LCV not found!
+         F(u) = 25.942147 >= F(w) = 25.720962
+Optimal LCV not found!
+         F(u) = 25.992003 >= F(w) = 25.761532
+Landing# 1150. Elapsed time: 3848
+u =		       3.3819314       2.6956609       3.3020409       7.0818675       4.6557437       12.087377       2.7915842       11.464662 ...	F(t) =        25.988545
+Optimal LCV not found!
+         F(u) = 26.085192 >= F(w) = 26.027986
+Optimal LCV not found!
+         F(u) = 26.18366 >= F(w) = 26.031255
+Landing# 1200. Elapsed time: 4030
+u =		       3.4356429       2.7389239       3.3538581       7.1090385        4.664725       12.185105       2.7800197       11.606344 ...	F(t) =        26.232868
+Optimal LCV not found!
+         F(u) = 26.333952 >= F(w) = 26.049998
+Optimal LCV not found!
+         F(u) = 26.427727 >= F(w) = 26.3349
+Optimal LCV not found!
+         F(u) = 26.508023 >= F(w) = 26.421993
+Landing# 1250. Elapsed time: 4216
+u =		       3.4908989       2.7836148       3.4073896       7.1358279       4.6724772       12.275555       2.7712719       11.746228 ...	F(t) =        26.505757
+Optimal LCV not found!
+         F(u) = 26.53697 >= F(w) = 26.240629
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 26.601179 >= F(w) = 26.51789
+Landing# 1300. Elapsed time: 4400
+u =		       3.5453226       2.8281067       3.4598303       7.1627752       4.6847324       12.372931       2.7643727       11.893917 ...	F(t) =        26.740412
+Optimal LCV not found!
+         F(u) = 26.74779 >= F(w) = 26.515643
+Optimal LCV not found!
+         F(u) = 26.818475 >= F(w) = 26.791364
+Optimal LCV not found!
+         F(u) = 26.852922 >= F(w) = 26.610225
+Optimal LCV not found!
+         F(u) = 26.93999 >= F(w) = 26.725774
+Landing# 1350. Elapsed time: 4582
+u =		       3.6016238       2.8729836        3.515003       7.1918892       4.6974405       12.471834        2.755644       12.045214 ...	F(t) =        26.988899
+Optimal LCV not found!
+         F(u) = 26.988899 >= F(w) = 26.858211
+Landing# 1400. Elapsed time: 4762
+u =		       3.6435642       2.9062251       3.5566279       7.2117485       4.7062959       12.565689       2.7484211       12.184626 ...	F(t) =        27.087346
+Optimal LCV not found!
+         F(u) = 27.385845 >= F(w) = 27.167171
+Optimal LCV not found!
+         F(u) = 27.382615 >= F(w) = 27.145335
+Optimal LCV not found!
+         F(u) = 27.376108 >= F(w) = 27.200904
+Optimal LCV not found!
+         F(u) = 27.367866 >= F(w) = 27.224226
+Optimal LCV not found!
+         F(u) = 27.416337 >= F(w) = 27.156068
+Landing# 1450. Elapsed time: 4942
+u =		       3.6953442       2.9484934        3.608322       7.2373511       4.7127092       12.660611       2.7464708       12.325548 ...	F(t) =        27.277003
+Landing# 1500. Elapsed time: 5123
+u =		       3.7562311       2.9973795       3.6650079       7.2673763       4.7325618       12.751415       2.7316089       12.462721 ...	F(t) =        27.704896
+Optimal LCV not found!
+         F(u) = 27.7075 >= F(w) = 27.586037
+Optimal LCV not found!
+         F(u) = 27.730844 >= F(w) = 27.596542
+Optimal LCV not found!
+         F(u) = 27.808921 >= F(w) = 27.645165
+Optimal LCV not found!
+         F(u) = 27.824384 >= F(w) = 27.717033
+Optimal LCV not found!
+         F(u) = 27.898082 >= F(w) = 27.773909
+Optimal LCV not found!
+         F(u) = 27.899266 >= F(w) = 27.740643
+Landing# 1550. Elapsed time: 5305
+u =		       3.8074741         3.04024       3.7143176       7.2980016       4.7487261       12.846268       2.7271666       12.608755 ...	F(t) =        27.924331
+Optimal LCV not found!
+         F(u) = 27.941825 >= F(w) = 27.871785
+Optimal LCV not found!
+         F(u) = 28.069812 >= F(w) = 27.848702
+Optimal LCV not found!
+         F(u) = 28.051363 >= F(w) = 27.823918
+Optimal LCV not found!
+         F(u) = 28.095046 >= F(w) = 27.931552
+Optimal LCV not found!
+         F(u) = 28.106058 >= F(w) = 28.021446
+Landing# 1600. Elapsed time: 5488
+u =		       3.8639327       3.0842811       3.7700779       7.3308799       4.7673865       12.949917       2.7218876       12.763567 ...	F(t) =        28.167234
+Optimal LCV not found!
+         F(u) = 28.185527 >= F(w) = 28.004192
+Optimal LCV not found!
+         F(u) = 28.28645 >= F(w) = 27.988374
+Landing# 1650. Elapsed time: 5670
+u =		       3.9178978        3.128937       3.8210348       7.3606522       4.7759132       13.043925       2.7083178       12.905877 ...	F(t) =        28.426427
+Optimal LCV not found!
+         F(u) = 28.4312 >= F(w) = 28.237945
+Optimal LCV not found!
+         F(u) = 28.524229 >= F(w) = 28.366637
+Optimal LCV not found!
+         F(u) = 28.531814 >= F(w) = 28.455799
+slurmd[node176]: error: *** JOB 325689 CANCELLED AT 2022-08-30T10:27:17 ***
+[0:node176] unexpected disconnect completion event from [2:node241]
+Assertion failed in file ../../dapl_conn_rc.c at line 1128: 0
+internal ABORT - process 0
+slurmd[node176]: error: *** STEP 325689.0 CANCELLED AT 2022-08-30T10:27:17 ***
+[mpiexec@node176] handle_exit_status (./pm/pmiserv/pmiserv_cb.c:538): assert (!closed) failed
+[mpiexec@node176] HYDT_dmxu_poll_wait_for_event (./tools/demux/demux_poll.c:77): callback returned error status
+[mpiexec@node176] HYD_pmci_wait_for_completion (./pm/pmiserv/pmiserv_pmci.c:388): error waiting for event
+[mpiexec@node176] main (./ui/mpich/mpiexec.c:718): process manager error waiting for completion
+/bin/rm: cannot remove `/tmp/srun___logue': No such file or directory

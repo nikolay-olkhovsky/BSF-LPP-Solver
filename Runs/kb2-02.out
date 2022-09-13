@@ -1,0 +1,215 @@
+=================================================== BSF Target ====================================================
+Problem name: kb2
+Number of Workers: 10
+OpenMP is turned off!
+Map List is not Fragmented.
+Before conversion: m =	43	n = 68
+After conversion:  m =	109	n = 41
+Eps Min Dir Length:	0.01
+Eps Objective:		0.001
+Eps Shift:		0.01
+Eps Zero Compare:	0.01
+Eps Zero Direction:	0.01
+Exact Obj Value:	1749.9
+Distance to Apex:	0
+Low Cost Percentile:	0.1
+Gap Max:		0.2
+Obj Vector Length:	1
+Start Shift Lengt:	1
+Blocking obj var:	false
+Use low cost vars:	true
+--------------- Statisics ---------------
+Number of high-cost variables:	3
+Number of low-cost variables:	2
+Number of zero-cost variables:	36
+Problem Scale:			200
+--------------- Data ---------------
+Obj Function:	            16.5             -16             -12        -0.08757        -0.08757               0               0               0 ...
+Start point:	       97.273377     0.028636416       1.4030499       47.729566       88.850679        13.15618     0.024262407   -0.0042914283 ...	F(x) = 1575.7556
+Apex point:	       97.273377     0.028636416       1.4030499       47.729566       88.850679        13.15618     0.024262407   -0.0042914283 ...	F(x) = 1575.7556
+-------------------------------------------
+--------- Finding feasible point ------------
+Iter # 0. Elapsed time: 0
+u =		       97.273377     0.028636416       1.4030499       47.729566       88.850679        13.15618     0.024262407   -0.0042914283 ...	F(t) =        1575.7556
+Landing# 0. Elapsed time: 0
+u =		       97.276594     0.028636416       1.3995946       47.729566       88.850679       13.156343     0.024262407   -0.0042914283 ...	F(t) =        1575.8501
+Landing# 100. Elapsed time: 32
+u =		       97.587078     0.040316858       1.0769272       47.729566       88.850679       13.173133     0.033311803   -0.0096176631 ...	F(t) =        1584.6583
+Landing# 200. Elapsed time: 67
+u =		       97.884403     0.052782704      0.77869178       47.729566       88.850679       13.189471     0.038805681    -0.007385935 ...	F(t) =        1592.9435
+Landing# 300. Elapsed time: 103
+u =		       98.174356     0.058900431      0.48673515       47.729566       88.850679       13.207071      0.04205235   -0.0098039669 ...	F(t) =        1601.1333
+Landing# 400. Elapsed time: 140
+u =		       98.418384     0.030998495      0.19253658       47.728653       88.849766        13.21064     0.025572115   -0.0097048468 ...	F(t) =        1609.1367
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.3003 >= F(w) = 1612.2499
+Landing# 500. Elapsed time: 161
+u =		       98.482292   -0.0086463139    -0.007915947        47.69515       88.831346       13.221094    0.0052656052   -0.0034985296 ...	F(t) =        1613.2355
+Optimal LCV not found!
+         F(u) = 1613.3301 >= F(w) = 1612.1061
+Optimal LCV not found!
+         F(u) = 1613.2861 >= F(w) = 1613.0324
+Optimal LCV not found!
+         F(u) = 1613.337 >= F(w) = 1612.9073
+Optimal LCV not found!
+         F(u) = 1613.3535 >= F(w) = 1612.2613
+Optimal LCV not found!
+         F(u) = 1613.3189 >= F(w) = 1612.9207
+Optimal LCV not found!
+         F(u) = 1613.3433 >= F(w) = 1612.7486
+Optimal LCV not found!
+         F(u) = 1613.332 >= F(w) = 1612.4701
+Optimal LCV not found!
+         F(u) = 1613.3205 >= F(w) = 1612.4138
+Optimal LCV not found!
+         F(u) = 1613.2983 >= F(w) = 1612.4125
+Optimal LCV not found!
+         F(u) = 1613.3008 >= F(w) = 1611.6958
+Landing# 600. Elapsed time: 175
+u =		       98.481459   -0.0090126799   -0.0092820707       47.653951       88.774789       13.238054    -0.007477905     0.020386059 ...	F(t) =        1613.2526
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.3543 >= F(w) = 1612.8023
+Optimal LCV not found!
+         F(u) = 1613.356 >= F(w) = 1612.7524
+Optimal LCV not found!
+         F(u) = 1613.3061 >= F(w) = 1612.3474
+Optimal LCV not found!
+         F(u) = 1613.3366 >= F(w) = 1612.7426
+Optimal LCV not found!
+         F(u) = 1613.3941 >= F(w) = 1612.5368
+Optimal LCV not found!
+         F(u) = 1613.3914 >= F(w) = 1612.3804
+Optimal LCV not found!
+         F(u) = 1613.3682 >= F(w) = 1612.6002
+Optimal LCV not found!
+         F(u) = 1613.3388 >= F(w) = 1612.4731
+Optimal LCV not found!
+         F(u) = 1613.3895 >= F(w) = 1612.2968
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.4029 >= F(w) = 1612.3939
+Optimal LCV not found!
+         F(u) = 1613.3814 >= F(w) = 1612.72
+Landing# 700. Elapsed time: 188
+u =		        98.48455   -0.0088754399   -0.0094856105       47.590144       88.726354       13.249724   -0.0089157437     0.021903073 ...	F(t) =        1613.3137
+Optimal LCV not found!
+         F(u) = 1613.3736 >= F(w) = 1611.6403
+Optimal LCV not found!
+         F(u) = 1613.3602 >= F(w) = 1611.7384
+Optimal LCV not found!
+         F(u) = 1613.3755 >= F(w) = 1612.711
+Optimal LCV not found!
+         F(u) = 1613.3566 >= F(w) = 1612.6537
+Optimal LCV not found!
+         F(u) = 1613.3799 >= F(w) = 1612.6989
+Optimal LCV not found!
+         F(u) = 1613.4161 >= F(w) = 1612.5305
+Optimal LCV not found!
+         F(u) = 1613.3717 >= F(w) = 1612.3105
+Optimal LCV not found!
+         F(u) = 1613.3361 >= F(w) = 1612.5603
+Optimal LCV not found!
+         F(u) = 1613.4284 >= F(w) = 1612.4496
+Optimal LCV not found!
+         F(u) = 1613.4242 >= F(w) = 1612.7749
+Optimal LCV not found!
+         F(u) = 1613.4363 >= F(w) = 1612.4655
+Optimal LCV not found!
+         F(u) = 1613.4357 >= F(w) = 1612.6845
+Optimal LCV not found!
+         F(u) = 1613.4266 >= F(w) = 1612.6172
+Optimal LCV not found!
+         F(u) = 1613.4239 >= F(w) = 1612.5966
+Optimal LCV not found!
+         F(u) = 1613.3537 >= F(w) = 1613.0066
+Landing# 800. Elapsed time: 201
+u =		       98.482567     -0.00896204   -0.0088672771       47.547189       88.683399        13.23269   -0.0093513108     0.044565598 ...	F(t) =        1613.2824
+Optimal LCV not found!
+         F(u) = 1613.4197 >= F(w) = 1612.6817
+Optimal LCV not found!
+         F(u) = 1613.443 >= F(w) = 1612.4638
+Optimal LCV not found!
+         F(u) = 1613.439 >= F(w) = 1612.4606
+Optimal LCV not found!
+         F(u) = 1613.4223 >= F(w) = 1612.5132
+Optimal LCV not found!
+         F(u) = 1613.4857 >= F(w) = 1612.9105
+Optimal LCV not found!
+         F(u) = 1613.4116 >= F(w) = 1612.3683
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.393 >= F(w) = 1611.6956
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.5172 >= F(w) = 1612.6643
+Optimal LCV not found!
+         F(u) = 1613.4907 >= F(w) = 1612.7087
+Optimal LCV not found!
+         F(u) = 1613.411 >= F(w) = 1612.6988
+Optimal LCV not found!
+         F(u) = 1613.52 >= F(w) = 1612.5075
+Optimal LCV not found!
+         F(u) = 1613.4799 >= F(w) = 1612.8148
+Landing# 900. Elapsed time: 213
+u =		        98.49225   -0.0091751314   -0.0092062254        47.50256        88.63877       13.232528   -0.0096202999     0.025400305 ...	F(t) =        1613.4575
+Optimal LCV not found!
+         F(u) = 1613.534 >= F(w) = 1612.5319
+Optimal LCV not found!
+         F(u) = 1613.4811 >= F(w) = 1612.5297
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.5006 >= F(w) = 1612.5481
+Optimal LCV not found!
+         F(u) = 1613.4894 >= F(w) = 1612.4988
+Optimal LCV not found!
+         F(u) = 1613.4886 >= F(w) = 1612.5155
+Optimal LCV not found!
+         F(u) = 1613.5253 >= F(w) = 1612.5417
+Optimal LCV not found!
+         F(u) = 1613.5184 >= F(w) = 1612.5323
+Optimal LCV not found!
+         F(u) = 1613.5109 >= F(w) = 1613.3695
+Optimal LCV not found!
+         F(u) = 1613.5456 >= F(w) = 1612.65
+Optimal LCV not found!
+         F(u) = 1613.5576 >= F(w) = 1612.5987
+Optimal LCV not found!
+         F(u) = 1613.5693 >= F(w) = 1612.8433
+Landing# 1000. Elapsed time: 225
+u =		       98.495949    -0.008864982   -0.0090279842       47.463861       88.600071       13.211349   -0.0093621467     0.032141151 ...	F(t) =        1613.5182
+Optimal LCV not found!
+         F(u) = 1613.526 >= F(w) = 1612.5385
+Optimal LCV not found!
+Optimal LCV not found!
+         F(u) = 1613.4979 >= F(w) = 1612.8396
+Optimal LCV not found!
+         F(u) = 1613.5608 >= F(w) = 1612.7562
+Optimal LCV not found!
+         F(u) = 1613.563 >= F(w) = 1612.5715
+Optimal LCV not found!
+         F(u) = 1613.582 >= F(w) = 1612.9097
+Optimal LCV not found!
+         F(u) = 1613.5509 >= F(w) = 1612.8745
+Optimal LCV not found!
+         F(u) = 1613.5717 >= F(w) = 1612.5754
+Optimal LCV not found!
+         F(u) = 1613.5083 >= F(w) = 1613.1626
+Optimal LCV not found!
+         F(u) = 1613.5305 >= F(w) = 1611.7733
+Optimal LCV not found!
+         F(u) = 1613.5504 >= F(w) = 1612.7999
+Optimal LCV not found!
+         F(u) = 1613.5261 == F(w) = 1613.5268
+Maybe, you should decreas PP_EPS_OBJ.
+=============================================
+Elapsed time: 235.53916
+Iterations: 13139684
+Optimal objective value:        1613.5261
+Exact objective value:             1749.9
+Relative error = 0.077932414
+=============================================
+Solution is saved into the file 'Problems/lp_kb2_so.mtx'.
+Solution:	     0.044920775       5.0809016       9.7970364      0.47268656               0       13.230912               0     0.059535208	...
+Ordered:	       98.496356               0               0       47.431377       88.567588       13.230912               0     0.059535208	...
