@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BSF-Code.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Problem-bsfCode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CBSFBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSF-Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BSF-Forwards.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BSF-Include.h">
@@ -60,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Problem-Types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CBSFBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BSF-Forwards.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

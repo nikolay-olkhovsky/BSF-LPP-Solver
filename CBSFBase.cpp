@@ -1,17 +1,7 @@
-/*==============================================================================
-Project: LiFe
-Theme: Apex Method
-Module: BSF-Code.cpp (Problem Independent Code)
-Prefix: BC
-Author: Leonid B. Sokolinsky
-This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky/BSF-skeleton)
-==============================================================================*/
-#include "BSF-Data.h"				// Problem Independent Variables & Data Structures 
-#include "BSF-Forwards.h"			// Problem Independent Function Forwards
-#include "BSF-ProblemFunctions.h"	// Predefined Problem Function Forwards
-using namespace std;
+#include "CBSFBase.h"
+
 //======================================== Problem-independent codes (don't modify them) ====================================
-int main(int argc, char* argv[]) {
+void CBSFBase::run() {
 	char emptystring[] = "";
 	char* message = emptystring;
 	unsigned success;
@@ -20,16 +10,16 @@ int main(int argc, char* argv[]) {
 	PC_bsf_Init(&BD_success);
 	MPI_Allreduce(&BD_success, &success, 1, MPI_UNSIGNED, MPI_LAND, MPI_COMM_WORLD);
 	if (!success) {
-		if (BD_rank == BD_masterRank) 
+		if (BD_rank == BD_masterRank)
 			cout << "Error: PC_bsf_Init failed!" << endl;
 		MPI_Finalize();
 		exit(1);
 	};
-	BD_success = true; 
+	BD_success = true;
 	BC_Init(&BD_success);
 	MPI_Allreduce(&BD_success, &success, 1, MPI_UNSIGNED, MPI_LAND, MPI_COMM_WORLD);
 	if (!success) {
-		if (BD_rank == BD_masterRank) 
+		if (BD_rank == BD_masterRank)
 			cout << "Error: BC_Init failed (not enough memory)!" << endl;
 		MPI_Finalize();
 		exit(1);
@@ -42,10 +32,9 @@ int main(int argc, char* argv[]) {
 		BC_Worker();
 	}
 	MPI_Finalize();
-	return 0;
 }
 
-static void BC_Master() {// The head function of the master process.
+void CBSFBase::BC_Master() {// The head function of the master process.
 	PC_bsf_ParametersOutput(BD_order.parameter);
 	BD_iterCounter = 0;
 
@@ -64,33 +53,33 @@ static void BC_Master() {// The head function of the master process.
 		//
 		//
 		switch (BD_jobCase) {
-			case 0:
+		case 0:
 			PC_bsf_ProcessResults(
-				&BD_extendedReduceResult_P->elem, 
+				&BD_extendedReduceResult_P->elem,
 				BD_extendedReduceResult_P->reduceCounter,
-				&(BD_order.parameter), 
+				&(BD_order.parameter),
 				&BD_newJobCase, &BD_exit);
 #ifdef PP_BSF_ITER_OUTPUT
 			if (BD_iterCounter % PP_BSF_TRACE_COUNT == 0)
 				PC_bsf_IterOutput(
-					&BD_extendedReduceResult_P->elem, 
-					BD_extendedReduceResult_P->reduceCounter, 
+					&BD_extendedReduceResult_P->elem,
+					BD_extendedReduceResult_P->reduceCounter,
 					BD_order.parameter,
 					BD_t + MPI_Wtime(),
 					BD_newJobCase);
 #endif // PP_BSF_ITER_OUTPUT
 			break;
 		case 1:
-			PC_bsf_ProcessResults_1( 
-				&BD_extendedReduceResult_P_1->elem, 
+			PC_bsf_ProcessResults_1(
+				&BD_extendedReduceResult_P_1->elem,
 				BD_extendedReduceResult_P_1->reduceCounter,
-				&(BD_order.parameter), 
+				&(BD_order.parameter),
 				&BD_newJobCase, &BD_exit);
 #ifdef PP_BSF_ITER_OUTPUT
 			if (BD_iterCounter % PP_BSF_TRACE_COUNT == 0)
 				PC_bsf_IterOutput_1(
-					&BD_extendedReduceResult_P_1->elem, 
-					BD_extendedReduceResult_P_1->reduceCounter, 
+					&BD_extendedReduceResult_P_1->elem,
+					BD_extendedReduceResult_P_1->reduceCounter,
 					BD_order.parameter,
 					BD_t + MPI_Wtime(),
 					BD_newJobCase);
@@ -139,7 +128,7 @@ static void BC_Master() {// The head function of the master process.
 	BD_t += MPI_Wtime();
 
 	BC_MasterMap(BD_EXIT);
-	
+
 	switch (BD_jobCase) {
 	case 0:
 		PC_bsf_ProblemOutput(&BD_extendedReduceResult_P->elem, BD_extendedReduceResult_P->reduceCounter, BD_order.parameter, BD_t);
@@ -159,7 +148,7 @@ static void BC_Master() {// The head function of the master process.
 	};
 };
 
-static void BC_Worker() {// The head function of a worker process.
+void CBSFBase::BC_Worker() {// The head function of a worker process.
 	bool exit;
 	while (true) {
 		exit = BC_WorkerMap();
@@ -168,7 +157,7 @@ static void BC_Worker() {// The head function of a worker process.
 	};
 };
 
-static void BC_MasterMap(bool exit) { // Forms an order and sends it to the worker processes to perform the Map function in the current iteration.
+void CBSFBase::BC_MasterMap(bool exit) { // Forms an order and sends it to the worker processes to perform the Map function in the current iteration.
 	PC_bsfAssignJobCase(BD_jobCase);
 	PC_bsfAssignIterCounter(BD_iterCounter);
 
@@ -189,7 +178,7 @@ static void BC_MasterMap(bool exit) { // Forms an order and sends it to the work
 	MPI_Waitall(BD_numOfWorkers, BD_request, BD_status);
 };
 
-static void BC_MasterReduce() {
+void CBSFBase::BC_MasterReduce() {
 
 	for (int rank = 0; rank < BD_numOfWorkers; rank++)
 		switch (BD_jobCase) {
@@ -230,7 +219,7 @@ static void BC_MasterReduce() {
 	};
 };
 
-static bool BC_WorkerMap() { // Performs the Map function
+bool CBSFBase::BC_WorkerMap() { // Performs the Map function
 	MPI_Recv(
 		&BD_order,
 		sizeof(BT_order_T),
@@ -290,7 +279,7 @@ static bool BC_WorkerMap() { // Performs the Map function
 	return !BD_EXIT;
 };
 
-static void BC_WorkerReduce() {
+void CBSFBase::BC_WorkerReduce() {
 
 	switch (BD_order.jobCase) {
 	case 0:
@@ -315,7 +304,7 @@ static void BC_WorkerReduce() {
 	};
 };
 
-static void BC_ProcessExtendedReduceList(BT_extendedReduceElem_T* reduceList, int length, BT_extendedReduceElem_T** extendedReduceResult_P) {
+void CBSFBase::BC_ProcessExtendedReduceList(BT_extendedReduceElem_T* reduceList, int length, BT_extendedReduceElem_T** extendedReduceResult_P) {
 	int firstSuccessIndex = -1;
 
 	*extendedReduceResult_P = &reduceList[0];
@@ -338,7 +327,7 @@ static void BC_ProcessExtendedReduceList(BT_extendedReduceElem_T* reduceList, in
 	};
 };
 
-static void BC_ProcessExtendedReduceList_1(BT_extendedReduceElem_T_1* reduceList, int length, BT_extendedReduceElem_T_1** extendedReduceResult_P) {
+void CBSFBase::BC_ProcessExtendedReduceList_1(BT_extendedReduceElem_T_1* reduceList, int length, BT_extendedReduceElem_T_1** extendedReduceResult_P) {
 	int firstSuccessIndex = -1;
 
 	*extendedReduceResult_P = &reduceList[0];
@@ -361,7 +350,7 @@ static void BC_ProcessExtendedReduceList_1(BT_extendedReduceElem_T_1* reduceList
 	};
 };
 
-static void BC_ProcessExtendedReduceList_2(BT_extendedReduceElem_T_2* reduceList, int length, BT_extendedReduceElem_T_2** extendedReduceResult_P) {
+void CBSFBase::BC_ProcessExtendedReduceList_2(BT_extendedReduceElem_T_2* reduceList, int length, BT_extendedReduceElem_T_2** extendedReduceResult_P) {
 	int firstSuccessIndex = -1;
 
 	*extendedReduceResult_P = &reduceList[0];
@@ -384,7 +373,7 @@ static void BC_ProcessExtendedReduceList_2(BT_extendedReduceElem_T_2* reduceList
 	};
 };
 
-static void BC_ProcessExtendedReduceList_3(BT_extendedReduceElem_T_3* reduceList, int length, BT_extendedReduceElem_T_3** extendedReduceResult_P) {
+void CBSFBase::BC_ProcessExtendedReduceList_3(BT_extendedReduceElem_T_3* reduceList, int length, BT_extendedReduceElem_T_3** extendedReduceResult_P) {
 	int firstSuccessIndex = -1;
 
 	*extendedReduceResult_P = &reduceList[0];
@@ -407,7 +396,7 @@ static void BC_ProcessExtendedReduceList_3(BT_extendedReduceElem_T_3* reduceList
 	};
 };
 
-static void BC_Init(bool* success) {// Performs the memory allocation and the initialization of the skeleton data structures and variables.
+void CBSFBase::BC_Init(bool* success) {// Performs the memory allocation and the initialization of the skeleton data structures and variables.
 	cout << setprecision(PP_BSF_PRECISION);
 	int offset, first, last, subListSize;
 	/// 
@@ -451,8 +440,8 @@ static void BC_Init(bool* success) {// Performs the memory allocation and the in
 	}
 
 	BD_extendedReduceList = (BT_extendedReduceElem_T*)calloc(subListSize, sizeof(BT_extendedReduceElem_T));
-	if (BD_extendedReduceList == NULL) {*success = false;return;};
-	
+	if (BD_extendedReduceList == NULL) { *success = false; return; };
+
 	if (PP_BSF_MAX_JOB_CASE > 0) {
 		BD_extendedReduceList_1 = (BT_extendedReduceElem_T_1*)calloc(subListSize, sizeof(BT_extendedReduceElem_T_1));
 		if (BD_extendedReduceList_1 == NULL) { *success = false; return; };
@@ -469,7 +458,7 @@ static void BC_Init(bool* success) {// Performs the memory allocation and the in
 	}
 }
 
-static void BC_MpiRun() {
+void CBSFBase::BC_MpiRun() {
 	int rc;
 	rc = MPI_Init(NULL, NULL);	// Starting MPI
 	if (rc != MPI_SUCCESS) {
@@ -492,3 +481,14 @@ static void BC_MpiRun() {
 		exit(1);
 	};
 };
+
+//----------------------- Assigning Values to BSF-skeleton Variables (Do not modify!) -----------------------
+void CBSFBase::PC_bsfAssignAddressOffset(int value) { BSF_sv_addressOffset = value; };
+void CBSFBase::PC_bsfAssignIterCounter(int value) { BSF_sv_iterCounter = value; };
+void CBSFBase::PC_bsfAssignJobCase(int value) { BSF_sv_jobCase = value; };
+void CBSFBase::PC_bsfAssignMpiMaster(int value) { BSF_sv_mpiMaster = value; };
+void CBSFBase::PC_bsfAssignMpiRank(int value) { BSF_sv_mpiRank = value; };
+void CBSFBase::PC_bsfAssignNumberInSublist(int value) { BSF_sv_numberInSublist = value; };
+void CBSFBase::PC_bsfAssignNumOfWorkers(int value) { BSF_sv_numOfWorkers = value; };
+void CBSFBase::PC_bsfAssignParameter(PT_bsf_parameter_T parameter) { PC_bsf_CopyParameter(parameter, &BSF_sv_parameter); }
+void CBSFBase::PC_bsfAssignSublistLength(int value) { BSF_sv_sublistLength = value; };

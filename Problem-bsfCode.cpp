@@ -854,7 +854,7 @@ void PC_bsf_ProblemOutput_2(PT_bsf_reduceElem_T_2* reduceResult, int reduceCount
 void PC_bsf_ProblemOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
 	// not used
 }
-
+/**
 //----------------------- Assigning Values to BSF-skeleton Variables (Do not modify!) -----------------------
 void PC_bsfAssignAddressOffset(int value) { BSF_sv_addressOffset = value; };
 void PC_bsfAssignIterCounter(int value) { BSF_sv_iterCounter = value; };
@@ -865,7 +865,7 @@ void PC_bsfAssignNumberInSublist(int value) { BSF_sv_numberInSublist = value; };
 void PC_bsfAssignNumOfWorkers(int value) { BSF_sv_numOfWorkers = value; };
 void PC_bsfAssignParameter(PT_bsf_parameter_T parameter) { PC_bsf_CopyParameter(parameter, &BSF_sv_parameter); }
 void PC_bsfAssignSublistLength(int value) { BSF_sv_sublistLength = value; };
-
+/**/
 //---------------------------------- Problem functions -------------------------
 inline PT_float_T Vector_DotProductSquare(PT_vector_T x, PT_vector_T y) {
 	PT_float_T sum = 0;
