@@ -59,8 +59,5 @@
     <ClInclude Include="CBSFTask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Problem-Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

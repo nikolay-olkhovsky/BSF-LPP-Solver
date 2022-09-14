@@ -1,5 +1,36 @@
 #include "CBSFBase.h"
 
+// ========================= Variables ========================
+int	CBSFBase::BD_elemsPerWorker;
+bool CBSFBase::BD_exit;
+int	CBSFBase::BD_jobCase = 0;
+int	CBSFBase::BD_listSize;
+int	CBSFBase::BD_masterRank;
+int	CBSFBase::BD_newJobCase = 0;
+int	CBSFBase::BD_numOfWorkers;
+int	CBSFBase::BD_rank;
+int	CBSFBase::BD_size;
+bool CBSFBase::BD_success;
+int	CBSFBase::BD_tailLength;
+// ========================= Time Variables ========================
+double CBSFBase::BD_t;				// Total time
+int CBSFBase::BD_iterCounter;
+// ========================= Lists ========================
+BT_extendedReduceElem_T*	CBSFBase::BD_extendedReduceList;
+BT_extendedReduceElem_T_1*	CBSFBase::BD_extendedReduceList_1;
+BT_extendedReduceElem_T_2*	CBSFBase::BD_extendedReduceList_2;
+BT_extendedReduceElem_T_3*	CBSFBase::BD_extendedReduceList_3;
+BT_extendedReduceElem_T*	CBSFBase::BD_extendedReduceResult_P;
+BT_extendedReduceElem_T_1*	CBSFBase::BD_extendedReduceResult_P_1;
+BT_extendedReduceElem_T_2*	CBSFBase::BD_extendedReduceResult_P_2;
+BT_extendedReduceElem_T_3*	CBSFBase::BD_extendedReduceResult_P_3;
+PT_bsf_mapElem_T*			CBSFBase::BD_mapSubList;
+BT_order_T					CBSFBase::BD_order;		// Order for Workers
+MPI_Status					CBSFBase::BD_status[PP_BSF_MAX_MPI_SIZE];		// MPI ststus
+MPI_Request					CBSFBase::BD_request[PP_BSF_MAX_MPI_SIZE];	// MPI request
+int							CBSFBase::BD_sublistSize[PP_BSF_MAX_MPI_SIZE];// SubList Sizes for Workers
+int							CBSFBase::BD_offset[PP_BSF_MAX_MPI_SIZE];		// List offsets for Workers
+
 //======================================== Problem-independent codes (don't modify them) ====================================
 void CBSFBase::run() {
 	char emptystring[] = "";

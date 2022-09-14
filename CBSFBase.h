@@ -2,12 +2,64 @@
 #include "BSF-Types.h"				// Problem Independent Types 
 #include "BSF-Data.h"				// Problem Independent Variables & Data Structures 
 #include "BSF-SkeletonVariables.h"	// Skeleton Variables
+#include "BSF-Include.h"			// Problem Independent "Include" Files
+#include "Problem-bsfParameters.h"	// BSF-skeleton parameters
+
+// ========================= Constants ========================
+#define BD_EXIT	true			// End of Work
+//======================= Compatibility ==========================
+#ifndef PP_BSF_MAX_MPI_SIZE
+#ifdef PP_MAX_MPI_SIZE
+#define PP_BSF_MAX_MPI_SIZE PP_MAX_MPI_SIZE
+#endif // PP_MAX_MPI_SIZE
+#endif // PP_BSF_MAX_MPI_SIZE
 
 using namespace std;
 
 class CBSFBase
 {
 public:
+	/*---------------- BSF Skeleton Variables ----------------------*/
+	int BSF_sv_addressOffset;			// Contains the number of the first element of the map-sublist scheduled to the current worker process.
+	int BSF_sv_iterCounter;				// Contains the number of iterations performed so far.
+	int BSF_sv_jobCase;					// Contains the number of the current activity (job) in workflow.
+	int BSF_sv_mpiRank;					// Contains the rank of current MPI process.
+	int BSF_sv_mpiMaster;				// Contains the rank of master MPI process.
+	int BSF_sv_numberInSublist;			// Contains the relative number of the element in the map-sublist that the function Map is currently applied to. 
+	int BSF_sv_numOfWorkers;				// Contains the total number of the worker processes.
+	PT_bsf_parameter_T BSF_sv_parameter; // Contains the order parameters.
+	int BSF_sv_sublistLength;			// Contains the length of a map-sublist scheduled to a worker process.
+	// ========================= Variables ========================
+	static int	BD_elemsPerWorker;	// Number of elements per worker
+	static bool BD_exit;			// Indicator of ending the calculations
+	static int	BD_jobCase;		// Default value
+	static int	BD_listSize;		// Size of the list
+	static int	BD_masterRank;		// Rank of Master = Number of MPI processes - 1
+	static int	BD_newJobCase;	// Default value
+	static int	BD_numOfWorkers;	// Number of Workers = Number of MPI processes - 1
+	static int	BD_rank;			// Rank of the current process MPI 
+	static int	BD_size;			// Number of MPI processes
+	static bool BD_success;			// Indicator of Successfulness of Initialization
+	static int	BD_tailLength;		// Length of the remainder of the list after dividing by the number of workers
+	// ========================= Time Variables ========================
+	static double BD_t;				// Total time
+	static int BD_iterCounter;
+	// ========================= Lists ========================
+	static BT_extendedReduceElem_T* BD_extendedReduceList;
+	static BT_extendedReduceElem_T_1* BD_extendedReduceList_1;
+	static BT_extendedReduceElem_T_2* BD_extendedReduceList_2;
+	static BT_extendedReduceElem_T_3* BD_extendedReduceList_3;
+	static BT_extendedReduceElem_T* BD_extendedReduceResult_P;
+	static BT_extendedReduceElem_T_1* BD_extendedReduceResult_P_1;
+	static BT_extendedReduceElem_T_2* BD_extendedReduceResult_P_2;
+	static BT_extendedReduceElem_T_3* BD_extendedReduceResult_P_3;
+	static PT_bsf_mapElem_T* BD_mapSubList;
+	static BT_order_T					BD_order;		// Order for Workers
+	static MPI_Status					BD_status[PP_BSF_MAX_MPI_SIZE];		// MPI ststus
+	static MPI_Request					BD_request[PP_BSF_MAX_MPI_SIZE];	// MPI request
+	static int							BD_sublistSize[PP_BSF_MAX_MPI_SIZE];// SubList Sizes for Workers
+	static int							BD_offset[PP_BSF_MAX_MPI_SIZE];		// List offsets for Workers
+	/*---------------- Entrance Point ----------------------*/
 	void run();
 	/*---------------- Assigning Values to BSF Problem Variables ----------------------*/
 	void PC_bsfAssignAddressOffset(int value);

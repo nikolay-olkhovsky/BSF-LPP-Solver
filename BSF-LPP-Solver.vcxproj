@@ -147,7 +147,6 @@
     <ClInclude Include="CBSFTask.h" />
     <ClInclude Include="Problem-bsfParameters.h" />
     <ClInclude Include="Problem-bsfTypes.h" />
-    <ClInclude Include="Problem-Data.h" />
     <ClInclude Include="Problem-Include.h" />
     <ClInclude Include="Problem-Parameters.h" />
     <ClInclude Include="Problem-Types.h" />
