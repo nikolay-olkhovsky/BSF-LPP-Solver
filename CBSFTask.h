@@ -1,4 +1,5 @@
 #pragma once
+#include "CBSFBase.h"
 #include <cassert>
 #include <iomanip>
 #include <iostream>
@@ -7,7 +8,6 @@
 #include <omp.h>
 #include <stdio.h>
 #include <string>
-#include "CBSFBase.h"
 
 //====================== Macros ================================
 #define PF_MIN(x,y) (x<y?x:y)
