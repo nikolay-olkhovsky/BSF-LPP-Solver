@@ -1,9 +1,13 @@
 #pragma once
-#include "Problem-bsfParameters.h"	// BSF-skeleton parameters
-#include "Problem-bsfTypes.h"	// Predefined Problem Types
-#include "BSF-SkeletonVariables.h"	// Skeleton Variables
+#include <cassert>
+#include <iomanip>
+#include <iostream>
+#include <limits.h>
+#include <math.h>
+#include <omp.h>
+#include <stdio.h>
+#include <string>
 #include "CBSFBase.h"
-
 
 //====================== Macros ================================
 #define PF_MIN(x,y) (x<y?x:y)

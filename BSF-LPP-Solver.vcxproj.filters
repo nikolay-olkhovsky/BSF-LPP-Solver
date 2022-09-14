@@ -26,37 +26,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BSF-Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BSF-Include.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BSF-SkeletonVariables.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BSF-Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-bsfParameters.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-bsfTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-Include.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Problem-Parameters.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CBSFBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CBSFTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem-Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

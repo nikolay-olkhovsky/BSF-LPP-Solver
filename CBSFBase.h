@@ -1,9 +1,10 @@
 #pragma once
-#include "BSF-Types.h"				// Problem Independent Types 
-#include "BSF-Data.h"				// Problem Independent Variables & Data Structures 
-#include "BSF-SkeletonVariables.h"	// Skeleton Variables
-#include "BSF-Include.h"			// Problem Independent "Include" Files
-#include "Problem-bsfParameters.h"	// BSF-skeleton parameters
+#include <mpi.h>
+#include <iomanip>
+#include <iostream>
+#include <omp.h>
+#include "Problem-Parameters.h"		// Problem Parameters 
+#include "Problem-Types.h"
 
 // ========================= Constants ========================
 #define BD_EXIT	true			// End of Work
@@ -13,6 +14,35 @@
 #define PP_BSF_MAX_MPI_SIZE PP_MAX_MPI_SIZE
 #endif // PP_MAX_MPI_SIZE
 #endif // PP_BSF_MAX_MPI_SIZE
+
+
+//=========================== BSF Types ===============================
+struct BT_order_T {
+	char exit;		// true, if worker must stop
+	int jobCase;
+	int iterCounter;
+	PT_bsf_parameter_T parameter;
+};
+
+struct BT_extendedReduceElem_T {// Extended element type of reduce list
+	PT_bsf_reduceElem_T elem;	// Element of reduce list
+	int reduceCounter;			// Reduce Counter
+};
+
+struct BT_extendedReduceElem_T_1 {// Extended element type of reduce list
+	PT_bsf_reduceElem_T_1 elem;	// Element of reduce list
+	int reduceCounter;			// Reduce Counter
+};
+
+struct BT_extendedReduceElem_T_2 {// Extended element type of reduce list
+	PT_bsf_reduceElem_T_2 elem;	// Element of reduce list
+	int reduceCounter;			// Reduce Counter
+};
+
+struct BT_extendedReduceElem_T_3 {// Extended element type of reduce list
+	PT_bsf_reduceElem_T_3 elem;	// Element of reduce list
+	int reduceCounter;			// Reduce Counter
+};
 
 using namespace std;
 

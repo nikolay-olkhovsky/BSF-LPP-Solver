@@ -139,15 +139,8 @@
     <ClCompile Include="CBSFBase.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BSF-Data.h" />
-    <ClInclude Include="BSF-Include.h" />
-    <ClInclude Include="BSF-SkeletonVariables.h" />
-    <ClInclude Include="BSF-Types.h" />
     <ClInclude Include="CBSFBase.h" />
     <ClInclude Include="CBSFTask.h" />
-    <ClInclude Include="Problem-bsfParameters.h" />
-    <ClInclude Include="Problem-bsfTypes.h" />
-    <ClInclude Include="Problem-Include.h" />
     <ClInclude Include="Problem-Parameters.h" />
     <ClInclude Include="Problem-Types.h" />
   </ItemGroup>
