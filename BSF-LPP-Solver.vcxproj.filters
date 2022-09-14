@@ -32,9 +32,6 @@
     <ClInclude Include="BSF-Include.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BSF-ProblemFunctions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BSF-SkeletonVariables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,12 +42,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Problem-bsfTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-Data.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Problem-Forwards.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Problem-Include.h">
@@ -66,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CBSFTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Problem-Data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

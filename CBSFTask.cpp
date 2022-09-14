@@ -1,5 +1,16 @@
 #include "CBSFTask.h"
 
+PT_matrix_T CBSFTask::PD_A;
+PT_column_T CBSFTask::PD_b;
+PT_vector_T CBSFTask::PD_c;					// Objective Function Coefficients
+PT_vector_T CBSFTask::PD_apexPoint;			// Apex point
+PT_vector_T CBSFTask::PD_u;					// Base point on Polytope
+PT_vector_T CBSFTask::PD_direction;			// Unit vector to set shift direction
+PT_vector_T CBSFTask::PD_hi;					// Higher bound
+PT_vector_T CBSFTask::PD_lo;					// Lower bound
+PT_vector_T CBSFTask::PD_unitObjVector;		// = c/||c||
+PT_vector_T CBSFTask::PD_objVector;			// = PD_unitObjectiveVector * PP_OBJECTIVE_VECTOR_LENGTH
+
 void CBSFTask::PC_bsf_SetInitParameter(PT_bsf_parameter_T* parameter) {
 	for (int j = 0; j < PD_n; j++) // Generating initial approximation
 		parameter->x[j] = PD_u[j];
@@ -838,18 +849,18 @@ void CBSFTask::PC_bsf_ProblemOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int r
 }
 
 //---------------------------------- Problem functions -------------------------
-inline PT_float_T CBSFTask::Vector_DotProductSquare(PT_vector_T x, PT_vector_T y) {
+PT_float_T CBSFTask::Vector_DotProductSquare(PT_vector_T x, PT_vector_T y) {
 	PT_float_T sum = 0;
 	for (int j = 0; j < PD_n; j++)
 		sum += x[j] * y[j];
 	return sum;
 }
 
-inline PT_float_T CBSFTask::Vector_Norm(PT_vector_T x) {
+PT_float_T CBSFTask::Vector_Norm(PT_vector_T x) {
 	return sqrt(Vector_NormSquare(x));
 }
 
-inline PT_float_T CBSFTask::Vector_NormSquare(PT_vector_T x) {
+PT_float_T CBSFTask::Vector_NormSquare(PT_vector_T x) {
 	PT_float_T sum = 0;
 
 	for (int j = 0; j < PD_n; j++) {
@@ -858,17 +869,17 @@ inline PT_float_T CBSFTask::Vector_NormSquare(PT_vector_T x) {
 	return sum;
 }
 
-inline bool CBSFTask::PointInHalfspace // If the point belongs to the Halfspace with prescigion of PD_Gap
+bool CBSFTask::PointInHalfspace // If the point belongs to the Halfspace with prescigion of PD_Gap
 (PT_vector_T point, PT_vector_T a, PT_float_T b) {
 	return Vector_DotProductSquare(a, point) <= b + PP_GAP;
 }
 
-inline bool CBSFTask::PointInHalfspace_s // If the point belongs to the Halfspace with prescigion of PP_EPS_ZERO_COMPARE
+bool CBSFTask::PointInHalfspace_s // If the point belongs to the Halfspace with prescigion of PP_EPS_ZERO_COMPARE
 (PT_vector_T point, PT_vector_T a, PT_float_T b) {
 	return Vector_DotProductSquare(a, point) <= b + PP_EPS_ZERO_COMPARE;
 }
 
-inline bool CBSFTask::PointInPolytope_s(PT_vector_T x) { // If the point belongs to the polytope with prescigion of PP_EPS_ZERO_COMPARE
+bool CBSFTask::PointInPolytope_s(PT_vector_T x) { // If the point belongs to the polytope with prescigion of PP_EPS_ZERO_COMPARE
 	for (int i = 0; i < PD_m; i++) {
 		if (PD_A[i][PP_ADD_FLAG] == 1)
 			continue;
@@ -878,13 +889,13 @@ inline bool CBSFTask::PointInPolytope_s(PT_vector_T x) { // If the point belongs
 	return true;
 }
 
-inline void CBSFTask::Shift(PT_vector_T basePoint, PT_vector_T direction, PT_float_T siftLength, PT_vector_T endPoint) {
+void CBSFTask::Shift(PT_vector_T basePoint, PT_vector_T direction, PT_float_T siftLength, PT_vector_T endPoint) {
 	for (int j = 0; j < PD_n; j++)
 		endPoint[j] = basePoint[j] + direction[j] * siftLength;
 }
 
 // Calculating unit vector of direction from startPoint to endPoint
-inline bool CBSFTask::GetDirection(PT_vector_T startPoint, PT_vector_T endPoint, PT_vector_T unitVector) {
+bool CBSFTask::GetDirection(PT_vector_T startPoint, PT_vector_T endPoint, PT_vector_T unitVector) {
 	for (int j = 0; j < PD_n; j++) {
 		unitVector[j] = endPoint[j] - startPoint[j];
 	}
@@ -899,56 +910,56 @@ inline bool CBSFTask::GetDirection(PT_vector_T startPoint, PT_vector_T endPoint,
 	return true;
 }
 
-inline void CBSFTask::Vector_Copy(PT_vector_T fromPoint, PT_vector_T toPoint) { // toPoint = fromPoint
+void CBSFTask::Vector_Copy(PT_vector_T fromPoint, PT_vector_T toPoint) { // toPoint = fromPoint
 	for (int j = 0; j < PD_n; j++)
 		toPoint[j] = fromPoint[j];
 }
 
-inline void CBSFTask::Vector_PlusEquals(PT_vector_T equalVector, PT_vector_T plusVector) { // equalVector += plusVector
+void CBSFTask::Vector_PlusEquals(PT_vector_T equalVector, PT_vector_T plusVector) { // equalVector += plusVector
 	for (int j = 0; j < PD_n; j++)
 		equalVector[j] += plusVector[j];
 }
 
-inline void CBSFTask::Vector_MinusEquals(PT_vector_T equalPoint, PT_vector_T minusVector) { // equalPoint += minusVector
+void CBSFTask::Vector_MinusEquals(PT_vector_T equalPoint, PT_vector_T minusVector) { // equalPoint += minusVector
 	for (int j = 0; j < PD_n; j++)
 		equalPoint[j] -= minusVector[j];
 }
 
-inline void CBSFTask::Vector_Addition(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x + y
+void CBSFTask::Vector_Addition(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x + y
 	for (int j = 0; j < PD_n; j++)
 		z[j] = x[j] + y[j];
 }
 
-inline void CBSFTask::Vector_Subtraction(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x - y
+void CBSFTask::Vector_Subtraction(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x - y
 	for (int j = 0; j < PD_n; j++)
 		z[j] = x[j] - y[j];
 }
 
-inline void CBSFTask::Vector_MultiplyByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = r*x
+void CBSFTask::Vector_MultiplyByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = r*x
 	for (int j = 0; j < PD_n; j++)
 		y[j] = x[j] * r;
 }
 
-inline void CBSFTask::Vector_MultiplyEquals(PT_vector_T x, double r) {  // x = r*x
+void CBSFTask::Vector_MultiplyEquals(PT_vector_T x, double r) {  // x = r*x
 	for (int j = 0; j < PD_n; j++)
 		x[j] *= r;
 }
 
-inline void CBSFTask::Vector_DivideEquals(PT_vector_T x, double r) {  // x = x/r
+void CBSFTask::Vector_DivideEquals(PT_vector_T x, double r) {  // x = x/r
 	for (int j = 0; j < PD_n; j++)
 		x[j] /= r;
 }
 
-inline void CBSFTask::Vector_ResetToZero(PT_vector_T x) {  // x = 0
+void CBSFTask::Vector_ResetToZero(PT_vector_T x) {  // x = 0
 	for (int j = 0; j < PD_n; j++) x[j] = 0;
 }
 
-inline void CBSFTask::Vector_DivideByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = x/r
+void CBSFTask::Vector_DivideByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = x/r
 	for (int j = 0; j < PD_n; j++)
 		y[j] = x[j] / r;
 }
 
-inline void CBSFTask::Vector_Round(PT_vector_T x) {
+void CBSFTask::Vector_Round(PT_vector_T x) {
 	double floorValue;
 	double fractionalPart;
 	double sign;
@@ -972,20 +983,20 @@ inline void CBSFTask::Vector_Round(PT_vector_T x) {
 	}
 }
 
-inline void CBSFTask::Vector_EpsZero(PT_vector_T x) { // If x[j] < PP_EPS_ZERO_DIR then x[j] = 0
+void CBSFTask::Vector_EpsZero(PT_vector_T x) { // If x[j] < PP_EPS_ZERO_DIR then x[j] = 0
 	for (int j = 0; j < PD_n; j++)
 		if (fabs(x[j]) < PP_EPS_ZERO_DIR)
 			x[j] = 0;
 }
 
-inline void CBSFTask::Vector_Unit(PT_vector_T vector) { // Calculating unit vector
+void CBSFTask::Vector_Unit(PT_vector_T vector) { // Calculating unit vector
 	double normOfVector = Vector_Norm(vector);
 	for (int j = 0; j < PD_n; j++) {
 		vector[j] /= normOfVector;
 	}
 };
 
-inline PT_float_T CBSFTask::ObjF(PT_vector_T x) {
+PT_float_T CBSFTask::ObjF(PT_vector_T x) {
 	PT_float_T s = 0;
 	for (int j = 0; j < PD_n; j++)
 		s += PD_c[j] * x[j];
@@ -1545,7 +1556,7 @@ bool CBSFTask::SavePoint(PT_vector_T x, const char* filename, double elapsedTime
 }
 
 // Point projection onto Half-space <a,x> <= b
-inline void CBSFTask::Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a, PT_float_T b, PT_vector_T projection, int* exitCode) {
+void CBSFTask::Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a, PT_float_T b, PT_vector_T projection, int* exitCode) {
 	double factor;
 	double aNormSquare = Vector_NormSquare(a);
 
@@ -1568,18 +1579,18 @@ inline void CBSFTask::Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a
 	return;
 }
 
-inline PT_float_T CBSFTask::Distance(PT_vector_T x, PT_vector_T y) {
+PT_float_T CBSFTask::Distance(PT_vector_T x, PT_vector_T y) {
 	PT_vector_T z;
 	Vector_Subtraction(x, y, z);
 	return Vector_Norm(z);
 }
 
-inline void CBSFTask::ObjUnitVector(PT_vector_T objUnitVector) { // Calculating Objective Unit Vector
+void CBSFTask::ObjUnitVector(PT_vector_T objUnitVector) { // Calculating Objective Unit Vector
 	double c_norm = Vector_Norm(PD_c);
 	Vector_DivideByNumber(PD_c, c_norm, objUnitVector);
 }
 
-inline void CBSFTask::ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBound) { // Shrink Objective Unit Vector from 0 to (shrinkBound-1)
+void CBSFTask::ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBound) { // Shrink Objective Unit Vector from 0 to (shrinkBound-1)
 	for (int j = 0; j < shrinkBound; j++)
 		objUnitVector[PD_objI[j]] = 0;
 	for (int j = shrinkBound; j < PD_n; j++)
@@ -1588,12 +1599,12 @@ inline void CBSFTask::ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBoun
 	Vector_DivideEquals(objUnitVector, norm);
 }
 
-inline void CBSFTask::MakeObjVector(PT_vector_T c, PT_vector_T objVector) { // Calculating Objective Vector
+void CBSFTask::MakeObjVector(PT_vector_T c, PT_vector_T objVector) { // Calculating Objective Vector
 	double c_norm = Vector_Norm(c);
 	Vector_MultiplyByNumber(c, PP_OBJECTIVE_VECTOR_LENGTH / c_norm, objVector);
 }
 
-inline void CBSFTask::ProblemOutput(double elapsedTime) {
+void CBSFTask::ProblemOutput(double elapsedTime) {
 	cout << "=============================================" << endl;
 	cout << "Elapsed time: " << elapsedTime << endl;
 	cout << "Iterations: " << BSF_sv_iterCounter << endl;
@@ -1616,7 +1627,7 @@ inline void CBSFTask::ProblemOutput(double elapsedTime) {
 	cout << endl;
 }
 
-inline void CBSFTask::SkipComments(FILE* stream) {
+void CBSFTask::SkipComments(FILE* stream) {
 	fpos_t pos;	// Position in the input stream
 	int res;
 	res = fscanf(stream, "\n");
@@ -1629,7 +1640,7 @@ inline void CBSFTask::SkipComments(FILE* stream) {
 	fsetpos(stream, &pos);
 };
 
-inline void CBSFTask::SortObjVarI() { // Sorting objective variables in absolute descending order
+void CBSFTask::SortObjVarI() { // Sorting objective variables in absolute descending order
 	PT_float_T bigestAbsVal;
 	int iBig;
 
@@ -1654,7 +1665,7 @@ inline void CBSFTask::SortObjVarI() { // Sorting objective variables in absolute
 	}
 }
 
-inline void CBSFTask::MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T basePoint, PT_vector_T x, bool* goOn)
+void CBSFTask::MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T basePoint, PT_vector_T x, bool* goOn)
 {
 	static PT_float_T objF_basePoint = ObjF(basePoint);
 	PT_float_T objF_x = ObjF(x);
@@ -1706,7 +1717,7 @@ inline void CBSFTask::MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_ve
 	#endif // PP_DEBUG /**/
 }
 
-inline void CBSFTask::DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* repeat) {
+void CBSFTask::DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* repeat) {
 
 	*repeat = false;
 
@@ -1781,7 +1792,7 @@ if (fabs(ObjF(parameter->x) - PD_objF_u) < PP_EPS_OBJ) {
 	}
 }
 
-inline double CBSFTask::ProblemScale() {
+double CBSFTask::ProblemScale() {
 	double problemScale = 0;
 	for (int i = 0; i < PD_m; i++) {
 		for (int j = 0; j < PD_n; j++) {

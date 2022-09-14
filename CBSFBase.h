@@ -1,7 +1,6 @@
 #pragma once
 #include "BSF-Types.h"				// Problem Independent Types 
 #include "BSF-Data.h"				// Problem Independent Variables & Data Structures 
-#include "BSF-ProblemFunctions.h"	// Predefined Problem Function Forwards
 #include "BSF-SkeletonVariables.h"	// Skeleton Variables
 
 using namespace std;
