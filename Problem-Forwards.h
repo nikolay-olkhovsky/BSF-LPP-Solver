@@ -5,7 +5,7 @@ Module: Problem-Forwards.h (Problem Function Forwards)
 Author: Leonid B. Sokolinsky
 This source code has been produced with using BSF-skeleton
 ==============================================================================*/
-#include "Problem-bsfTypes.h"
+/**#include "Problem-bsfTypes.h"
 #include "Problem-Types.h"
 //====================== Problem Functions ===========================
 bool		Conversion();
@@ -48,4 +48,4 @@ void		Vector_Unit(PT_vector_T vector);
 //
 //====================== Macros ================================
 #define PF_MIN(x,y) (x<y?x:y)
-#define PF_MAX(x,y) (x>y?x:y)
+#define PF_MAX(x,y) (x>y?x:y)/**/

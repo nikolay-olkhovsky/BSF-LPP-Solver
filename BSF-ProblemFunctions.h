@@ -5,7 +5,7 @@ Module: BSF-ProblemFunctions.h (Predefined Problem Function Forwards)
 Author: Leonid B. Sokolinsky
 This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky/BSF-skeleton)
 ==============================================================================*/
-#include "Problem-bsfTypes.h"	// Predefined Problem Types
+/**#include "Problem-bsfTypes.h"	// Predefined Problem Types
 
 void PC_bsf_CopyParameter(
 	PT_bsf_parameter_T parameterIn,
@@ -153,4 +153,4 @@ void PC_bsf_SetInitParameter(
 void PC_bsf_SetMapListElem(
 	PT_bsf_mapElem_T* elem, 
 	int i
-);
+);/**/

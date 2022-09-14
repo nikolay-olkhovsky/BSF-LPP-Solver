@@ -134,9 +134,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CBSFTask.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CBSFBase.cpp" />
-    <ClCompile Include="Problem-bsfCode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSF-Data.h" />
@@ -145,7 +145,7 @@
     <ClInclude Include="BSF-SkeletonVariables.h" />
     <ClInclude Include="BSF-Types.h" />
     <ClInclude Include="CBSFBase.h" />
-    <ClInclude Include="BSF-Forwards.h" />
+    <ClInclude Include="CBSFTask.h" />
     <ClInclude Include="Problem-bsfParameters.h" />
     <ClInclude Include="Problem-bsfTypes.h" />
     <ClInclude Include="Problem-Data.h" />

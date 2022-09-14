@@ -6,6 +6,7 @@ Prefix: BSF_sv
 Author: Leonid B. Sokolinsky
 This source code is a part of BSF Skeleton (https://github.com/leonid-sokolinsky/BSF-skeleton)
 ==============================================================================*/
+#pragma once
 inline int BSF_sv_addressOffset;			// Contains the number of the first element of the map-sublist scheduled to the current worker process.
 inline int BSF_sv_iterCounter;				// Contains the number of iterations performed so far.
 inline int BSF_sv_jobCase;					// Contains the number of the current activity (job) in workflow.

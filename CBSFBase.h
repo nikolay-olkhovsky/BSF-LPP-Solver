@@ -3,8 +3,6 @@
 #include "BSF-Data.h"				// Problem Independent Variables & Data Structures 
 #include "BSF-ProblemFunctions.h"	// Predefined Problem Function Forwards
 #include "BSF-SkeletonVariables.h"	// Skeleton Variables
-#include "BSF-Forwards.h"			// Problem Independent Function Forwards
-
 
 using namespace std;
 
@@ -35,5 +33,153 @@ public:
 	void BC_Worker();				// The head function of a worker process.
 	bool BC_WorkerMap();				// Performs the Map function.
 	void BC_WorkerReduce();			// Sends to the master process the element that is the sum of all reduce-sublist elements.
+
+	virtual void PC_bsf_CopyParameter(
+		PT_bsf_parameter_T parameterIn,
+		PT_bsf_parameter_T* parameterOutP
+	) = 0;
+	virtual void PC_bsf_Init(
+		bool* success
+	) = 0;
+	virtual void PC_bsf_IterOutput(
+		PT_bsf_reduceElem_T* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double elapsedTime,
+		int nextJob
+	) = 0;
+	virtual void PC_bsf_IterOutput_1(
+		PT_bsf_reduceElem_T_1* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double elapsedTime,
+		int nextJob
+	) = 0;
+	virtual void PC_bsf_IterOutput_2(
+		PT_bsf_reduceElem_T_2* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double elapsedTime,
+		int nextJob
+	) = 0;
+	virtual void PC_bsf_IterOutput_3(
+		PT_bsf_reduceElem_T_3* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double elapsedTime,
+		int nextJob
+	) = 0;
+	virtual void PC_bsf_JobDispatcher(
+		PT_bsf_parameter_T* parameter,
+		int* job,
+		bool* exit,
+		double t
+	) = 0;
+	//
+	virtual void PC_bsf_MapF(
+		PT_bsf_mapElem_T* mapElem,
+		PT_bsf_reduceElem_T* reduceElem,
+		int* success
+	) = 0;
+	virtual void PC_bsf_MapF_1(
+		PT_bsf_mapElem_T* mapElem,
+		PT_bsf_reduceElem_T_1* reduceElem,
+		int* success
+	) = 0;
+	virtual void PC_bsf_MapF_2(
+		PT_bsf_mapElem_T* mapElem,
+		PT_bsf_reduceElem_T_2* reduceElem,
+		int* success
+	) = 0;
+	virtual void PC_bsf_MapF_3(
+		PT_bsf_mapElem_T* mapElem,
+		PT_bsf_reduceElem_T_3* reduceElem,
+		int* success
+	) = 0;
+	virtual void PC_bsf_ParametersOutput(
+		PT_bsf_parameter_T parameter
+	) = 0;
+	virtual void PC_bsf_ProblemOutput(
+		PT_bsf_reduceElem_T* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double t
+	) = 0;
+	virtual void PC_bsf_ProblemOutput_1(
+		PT_bsf_reduceElem_T_1* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double t
+	) = 0;
+	virtual void PC_bsf_ProblemOutput_2(
+		PT_bsf_reduceElem_T_2* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double t
+	) = 0;
+	virtual void PC_bsf_ProblemOutput_3(
+		PT_bsf_reduceElem_T_3* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T parameter,
+		double t
+	) = 0;
+	virtual void PC_bsf_ProcessResults(
+		PT_bsf_reduceElem_T* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T* parameter,
+		int* nextJob,
+		bool* exit
+	) = 0;
+	virtual void PC_bsf_ProcessResults_1(
+		PT_bsf_reduceElem_T_1* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T* parameter,
+		int* nextJob,
+		bool* exit
+	) = 0;
+	virtual void PC_bsf_ProcessResults_2(
+		PT_bsf_reduceElem_T_2* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T* parameter,
+		int* nextJob,
+		bool* exit
+	) = 0;
+	virtual void PC_bsf_ProcessResults_3(
+		PT_bsf_reduceElem_T_3* reduceResult,
+		int reduceCounter,
+		PT_bsf_parameter_T* parameter,
+		int* nextJob,
+		bool* exit
+	) = 0;
+	virtual void PC_bsf_ReduceF(
+		PT_bsf_reduceElem_T* x,
+		PT_bsf_reduceElem_T* y,
+		PT_bsf_reduceElem_T* z
+	) = 0;
+	virtual void PC_bsf_ReduceF_1(
+		PT_bsf_reduceElem_T_1* x,
+		PT_bsf_reduceElem_T_1* y,
+		PT_bsf_reduceElem_T_1* z
+	) = 0;
+	virtual void PC_bsf_ReduceF_2(
+		PT_bsf_reduceElem_T_2* x,
+		PT_bsf_reduceElem_T_2* y,
+		PT_bsf_reduceElem_T_2* z
+	) = 0;
+	virtual void PC_bsf_ReduceF_3(
+		PT_bsf_reduceElem_T_3* x,
+		PT_bsf_reduceElem_T_3* y,
+		PT_bsf_reduceElem_T_3* z
+	) = 0;
+	virtual void PC_bsf_SetListSize(
+		int* listSize
+	) = 0;
+	virtual void PC_bsf_SetInitParameter(
+		PT_bsf_parameter_T* parameter
+	) = 0;
+	virtual void PC_bsf_SetMapListElem(
+		PT_bsf_mapElem_T* elem,
+		int i
+	) = 0;
 };
 

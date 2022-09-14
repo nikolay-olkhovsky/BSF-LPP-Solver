@@ -1,39 +1,21 @@
-/*==============================================================================
-Project: LiFe
-Theme: Apex Method
-Module: Problem-bsfCode.cpp (Implementation of the Problem)
-Prefix: PC
-Author: Leonid B. Sokolinsky
-This source code has been produced with using BSF-skeleton
-==============================================================================*/
-// PP_STATE_START
-// PP_STATE_DETERMINE_DIRECTION
-// MOVING_ALONG_SURFACE
-// PP_STATE_LANDING
-// PP_STATE_FIND_FEASIBLE_POINT
-/**
-#include "Problem-Data.h"			// Problem Types 
-#include "Problem-Forwards.h"		// Problem Function Forwards
-#include "Problem-bsfParameters.h"	// BSF-skeleton parameters
-#include "BSF-SkeletonVariables.h"	// Skeleton Variables
-using namespace std;
+#include "CBSFTask.h"
 
-void PC_bsf_SetInitParameter(PT_bsf_parameter_T* parameter) {
+void CBSFTask::PC_bsf_SetInitParameter(PT_bsf_parameter_T* parameter) {
 	for (int j = 0; j < PD_n; j++) // Generating initial approximation
 		parameter->x[j] = PD_u[j];
 };
 
-void PC_bsf_Init(bool* success) {
+void CBSFTask::PC_bsf_Init(bool* success) {
 	PD_state = PP_STATE_START;
 	PD_problemName = PP_PROBLEM_NAME;
 
-/*debug5*	
-	if (PP_MODE_BLOCK_HCV_VARIABLE && PP_MODE_USE_LCV_VARIABLE) {
-		cout << "Modes PP_MODE_BLOCK_HCV_VARIABLE & PP_MODE_USE_LCV_VARIABLE are incompatible!\n";
-		*success = false;
-		return;
-	}
-/*end debug*/
+	/*debug5*
+		if (PP_MODE_BLOCK_HCV_VARIABLE && PP_MODE_USE_LCV_VARIABLE) {
+			cout << "Modes PP_MODE_BLOCK_HCV_VARIABLE & PP_MODE_USE_LCV_VARIABLE are incompatible!\n";
+			*success = false;
+			return;
+		}
+	/*end debug*/
 
 	*success = LoadMatrixFormat();
 	if (*success == false)
@@ -69,17 +51,17 @@ void PC_bsf_Init(bool* success) {
 	Vector_Addition(PD_u, PD_direction, PD_apexPoint);
 }
 
-void PC_bsf_SetListSize(int* listSize) {
+void CBSFTask::PC_bsf_SetListSize(int* listSize) {
 	*listSize = PP_MM;
 }
 
-void PC_bsf_SetMapListElem(PT_bsf_mapElem_T* elem, int i) {
+void CBSFTask::PC_bsf_SetMapListElem(PT_bsf_mapElem_T* elem, int i) {
 	elem->a = PD_A[i];
 	elem->b = &(PD_b[i]);
 }
 
 // 0. Pseudo-pojection
-void PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int* success // 1 - reduceElem was produced successfully; 0 - otherwise
+void CBSFTask::PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int* success // 1 - reduceElem was produced successfully; 0 - otherwise
 ) {
 	int exitCode;
 
@@ -109,43 +91,43 @@ void PC_bsf_MapF(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T* reduceElem, int
 }
 
 // 1. CheckIn
-void PC_bsf_MapF_1(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_1* reduceElem, int* success) {
+void CBSFTask::PC_bsf_MapF_1(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_1* reduceElem, int* success) {
 	if (mapElem->a[PP_ADD_FLAG] == 0)
 		reduceElem->pointIn = PointInHalfspace(BSF_sv_parameter.x, mapElem->a, *mapElem->b);
 	else
 		reduceElem->pointIn = true;
 }
 
-void PC_bsf_MapF_2(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_2* reduceElem, int* success) {
+void CBSFTask::PC_bsf_MapF_2(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_2* reduceElem, int* success) {
 	// not used
 }
 
-void PC_bsf_MapF_3(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_3* reduceElem, int* success) {
+void CBSFTask::PC_bsf_MapF_3(PT_bsf_mapElem_T* mapElem, PT_bsf_reduceElem_T_3* reduceElem, int* success) {
 	// not used
 }
 
 // 0. Pseudo-pojection
-void PC_bsf_ReduceF(PT_bsf_reduceElem_T* x, PT_bsf_reduceElem_T* y, PT_bsf_reduceElem_T* z) { // z = x + y
+void CBSFTask::PC_bsf_ReduceF(PT_bsf_reduceElem_T* x, PT_bsf_reduceElem_T* y, PT_bsf_reduceElem_T* z) { // z = x + y
 	Vector_Addition(x->projection, y->projection, z->projection);
 	z->nonZeroCounter = x->nonZeroCounter + y->nonZeroCounter;
 	z->pointIn = x->pointIn && y->pointIn;
 }
 
 // 1. CheckIn
-void PC_bsf_ReduceF_1(PT_bsf_reduceElem_T_1* x, PT_bsf_reduceElem_T_1* y, PT_bsf_reduceElem_T_1* z) {
+void CBSFTask::PC_bsf_ReduceF_1(PT_bsf_reduceElem_T_1* x, PT_bsf_reduceElem_T_1* y, PT_bsf_reduceElem_T_1* z) {
 	z->pointIn = x->pointIn && y->pointIn;
 }
 
-void PC_bsf_ReduceF_2(PT_bsf_reduceElem_T_2* x, PT_bsf_reduceElem_T_2* y, PT_bsf_reduceElem_T_2* z) {
+void CBSFTask::PC_bsf_ReduceF_2(PT_bsf_reduceElem_T_2* x, PT_bsf_reduceElem_T_2* y, PT_bsf_reduceElem_T_2* z) {
 	// not used
 }
 
-void PC_bsf_ReduceF_3(PT_bsf_reduceElem_T_3* x, PT_bsf_reduceElem_T_3* y, PT_bsf_reduceElem_T_3* z) {
+void CBSFTask::PC_bsf_ReduceF_3(PT_bsf_reduceElem_T_3* x, PT_bsf_reduceElem_T_3* y, PT_bsf_reduceElem_T_3* z) {
 	// not used
 }
 
 //0. Start
-void PC_bsf_ProcessResults(
+void CBSFTask::PC_bsf_ProcessResults(
 	PT_bsf_reduceElem_T* reduceResult,
 	int reduceCounter, // Number of successfully produced Elements of Reduce List
 	PT_bsf_parameter_T* parameter, // Current Approximation
@@ -162,7 +144,7 @@ void PC_bsf_ProcessResults(
 #endif // PP_MAX_ITER_COUNT
 
 	PD_pointIn = reduceResult->pointIn;
-	if (PD_pointIn) 
+	if (PD_pointIn)
 		return;
 
 	static PT_vector_T relaxationVector;
@@ -172,7 +154,7 @@ void PC_bsf_ProcessResults(
 }
 
 // 1. Movement on Polytope  ========================================================
-void PC_bsf_ProcessResults_1(
+void CBSFTask::PC_bsf_ProcessResults_1(
 	PT_bsf_reduceElem_T_1* reduceResult,
 	int reduceCounter, // Number of successfully produced Elements of Reduce List
 	PT_bsf_parameter_T* parameter, // Current Approximation
@@ -190,7 +172,7 @@ void PC_bsf_ProcessResults_1(
 	PD_pointIn = reduceResult->pointIn;
 }
 
-void PC_bsf_ProcessResults_2(
+void CBSFTask::PC_bsf_ProcessResults_2(
 	PT_bsf_reduceElem_T_2* reduceResult,
 	int reduceCounter, // Number of successfully produced Elements of Reduce List
 	PT_bsf_parameter_T* parameter, // Current Approximation
@@ -200,7 +182,7 @@ void PC_bsf_ProcessResults_2(
 	// not used
 }
 
-void PC_bsf_ProcessResults_3(
+void CBSFTask::PC_bsf_ProcessResults_3(
 	PT_bsf_reduceElem_T_3* reduceResult,
 	int reduceCounter, // Number of successfully produced Elements of Reduce List
 	PT_bsf_parameter_T* parameter, // Current Approximation
@@ -210,7 +192,7 @@ void PC_bsf_ProcessResults_3(
 	// not used
 }
 
-void PC_bsf_JobDispatcher(
+void CBSFTask::PC_bsf_JobDispatcher(
 	PT_bsf_parameter_T* parameter, // Current Approximation
 	int* job,
 	bool* exit,
@@ -275,38 +257,38 @@ void PC_bsf_JobDispatcher(
 
 			switch (detDirSwitch) {
 			case BEGIN_LCV_UTILIZATION:
-		max_lcvI = 0;
-		max_objF_lcv = -INFINITY;
+				max_lcvI = 0;
+				max_objF_lcv = -INFINITY;
 
-/*debug00*/
+				/*debug00*/
 #ifdef PP_DEBUG
-		cout << "w =\t\t";
-		for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++)
-			cout << setw(PP_SETW) << parameter->x[PD_objI[j]];
-		if (PP_OUTPUT_LIMIT < PD_n) cout << " ...";
-		cout << "\tF(t) = " << setw(PP_SETW) << ObjF(parameter->x) << endl;
+				cout << "w =\t\t";
+				for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++)
+					cout << setw(PP_SETW) << parameter->x[PD_objI[j]];
+				if (PP_OUTPUT_LIMIT < PD_n) cout << " ...";
+				cout << "\tF(t) = " << setw(PP_SETW) << ObjF(parameter->x) << endl;
 #endif
-		/*end debug*/
+				/*end debug*/
 
-		PD_objF_w = ObjF(parameter->x);
-		lcvI = PD_firstLcvI;
-		c_lcvI = PD_c[PD_objI[lcvI]];
-		if (PD_firstLcvI < (PD_firstZcvI == INT_MAX ? PD_n : PD_firstZcvI)) {
-			PD_c[PD_objI[lcvI]] = fabs(PD_c[PD_objI[lcvI]]) + fabs(PD_c[PD_objI[PD_firstLcvI - 1]] / 2);
-			new_c_lcv = PD_c[PD_objI[lcvI]];
-			MakeObjVector(PD_c, PD_objVector);
-			detDirSwitch = POSITIVE_LCV;
-		}
-		else {
-			PD_c[PD_objI[lcvI]] = fabs(PD_c[PD_objI[PD_firstLcvI - 1]] / 2);
-			new_c_lcv = PD_c[PD_objI[lcvI]];
-			MakeObjVector(PD_c, PD_objVector);
-			detDirSwitch = POSITIVE_ZCV;
-		}
-		PD_c[PD_objI[lcvI]] = c_lcvI;
-		Vector_Copy(PD_u, parameter->x);
-		Vector_PlusEquals(parameter->x, PD_objVector);
-		return;
+				PD_objF_w = ObjF(parameter->x);
+				lcvI = PD_firstLcvI;
+				c_lcvI = PD_c[PD_objI[lcvI]];
+				if (PD_firstLcvI < (PD_firstZcvI == INT_MAX ? PD_n : PD_firstZcvI)) {
+					PD_c[PD_objI[lcvI]] = fabs(PD_c[PD_objI[lcvI]]) + fabs(PD_c[PD_objI[PD_firstLcvI - 1]] / 2);
+					new_c_lcv = PD_c[PD_objI[lcvI]];
+					MakeObjVector(PD_c, PD_objVector);
+					detDirSwitch = POSITIVE_LCV;
+				}
+				else {
+					PD_c[PD_objI[lcvI]] = fabs(PD_c[PD_objI[PD_firstLcvI - 1]] / 2);
+					new_c_lcv = PD_c[PD_objI[lcvI]];
+					MakeObjVector(PD_c, PD_objVector);
+					detDirSwitch = POSITIVE_ZCV;
+				}
+				PD_c[PD_objI[lcvI]] = c_lcvI;
+				Vector_Copy(PD_u, parameter->x);
+				Vector_PlusEquals(parameter->x, PD_objVector);
+				return;
 			case POSITIVE_LCV:
 				/*debug01*
 #ifdef PP_DEBUG
@@ -527,7 +509,7 @@ void PC_bsf_JobDispatcher(
 #endif // PP_DEBUG
 				/*end debug*/
 
-				if (max_lcvI == 0) 
+				if (max_lcvI == 0)
 					cout << "Optimal LCV not found!\n";
 
 				MakeObjVector(PD_c, PD_objVector);
@@ -550,7 +532,7 @@ void PC_bsf_JobDispatcher(
 		cout << "\tF(t) = " << setw(PP_SETW) << ObjF(parameter->x);
 		cout << endl;
 #endif
-/*end debug*/
+		/*end debug*/
 
 		DetermineDirection(parameter, exit, &repeat);
 
@@ -579,7 +561,7 @@ void PC_bsf_JobDispatcher(
 		PD_shiftLength = PP_START_SHIFT_LENGTH;
 		PD_numShiftsSameLength = 0;
 		Shift(PD_u, PD_direction, PD_shiftLength, parameter->x);
-/*debug00*/
+		/*debug00*/
 #ifdef PP_DEBUG
 		cout << "--------- Moving along surface ------------\n";
 		cout << "Sift = " << setw(PP_SETW) << PD_shiftLength << "\tt = ";
@@ -589,11 +571,11 @@ void PC_bsf_JobDispatcher(
 		cout << "\tF(t) = " << setw(PP_SETW) << ObjF(parameter->x);
 		cout << endl;
 #endif 
-/*end debug*/
-		*job = PP_JOB_CHECK;
+		/*end debug*/
+		* job = PP_JOB_CHECK;
 		ptr_unitVectorToSurface = PD_direction;
 		PD_state = MOVING_ALONG_SURFACE;
-	break;	
+		break;
 	case MOVING_ALONG_SURFACE://-------------------------- Moving along surface -----------------------------
 		MovingOnSurface(ptr_unitVectorToSurface, PD_u, parameter->x, &goOn);
 		if (goOn)
@@ -602,11 +584,11 @@ void PC_bsf_JobDispatcher(
 		// Preparations for landing
 		*job = PP_JOB_PSEUDOPOJECTION;
 		PD_state = PP_STATE_LANDING;
-/*debug00*/
+		/*debug00*/
 #ifdef PP_DEBUG
 		cout << "--------- Landing ------------\n";
 #endif // 
-/*end debug*/
+		/*end debug*/
 		break;
 	case PP_STATE_LANDING://-------------------------- Landing -----------------------------
 		if (!PD_pointIn)
@@ -620,7 +602,7 @@ void PC_bsf_JobDispatcher(
 		/*debug8*/
 //		if (PD_objF_u + PP_EPS_OBJ > PP_EXACT_OBJ_VALUE) {
 		if (fabs(PD_objF_u - PP_EXACT_OBJ_VALUE) <= PP_EPS_OBJ) {
-		*exit = true;
+			*exit = true;
 			return;
 		}
 		/*end debug*/
@@ -653,11 +635,11 @@ void PC_bsf_JobDispatcher(
 		*job = PP_JOB_PSEUDOPOJECTION;
 		PD_state = PP_STATE_DETERMINE_DIRECTION;
 		PD_numDetDir = 0;
-/*debug00*/
+		/*debug00*/
 #ifdef PP_DEBUG
 		cout << "--------- Determining direction ------------\n";
 #endif
-/*end debug*/
+		/*end debug*/
 		break;
 	case PP_STATE_FIND_FEASIBLE_POINT://-------------------------- Finding feasible point -----------------------------
 		if (!PD_pointIn) {
@@ -691,11 +673,11 @@ void PC_bsf_JobDispatcher(
 		*job = PP_JOB_PSEUDOPOJECTION;
 		PD_state = PP_STATE_DETERMINE_DIRECTION;
 		PD_numDetDir = 0;
-/*debug00*/
+		/*debug00*/
 #ifdef PP_DEBUG
 		cout << "--------- Determine Direction ------------\n";
 #endif 
-/*end debug*/
+		/*end debug*/
 		break;
 	default://------------------------------------- default -----------------------------------
 		cout << "PC_bsf_JobDispatcher: Undefined state!" << endl;
@@ -704,7 +686,7 @@ void PC_bsf_JobDispatcher(
 	}
 }
 
-void PC_bsf_ParametersOutput(PT_bsf_parameter_T parameter) {
+void CBSFTask::PC_bsf_ParametersOutput(PT_bsf_parameter_T parameter) {
 	cout << "=================================================== BSF Target ====================================================" << endl;
 	cout << "Problem name: " << PD_problemName << endl;
 	cout << "Number of Workers: " << BSF_sv_numOfWorkers << endl;
@@ -775,8 +757,8 @@ void PC_bsf_ParametersOutput(PT_bsf_parameter_T parameter) {
 	cout << "-------------------------------------------" << endl;
 }
 
-void PC_bsf_CopyParameter(PT_bsf_parameter_T parameterIn, PT_bsf_parameter_T* parameterOutP) {
-	for (int j = 0; j < PD_n; j++) 
+void CBSFTask::PC_bsf_CopyParameter(PT_bsf_parameter_T parameterIn, PT_bsf_parameter_T* parameterOutP) {
+	for (int j = 0; j < PD_n; j++)
 		parameterOutP->x[j] = parameterIn.x[j];
 
 	if (parameterIn.m > 0) {
@@ -790,7 +772,7 @@ void PC_bsf_CopyParameter(PT_bsf_parameter_T parameterIn, PT_bsf_parameter_T* pa
 }
 
 // 0. Start
-void PC_bsf_IterOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
+void CBSFTask::PC_bsf_IterOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
 	double elapsedTime, int nextJob) {
 	cout << "# " << BSF_sv_iterCounter << "\tTime " << round(elapsedTime);
 	cout << "\tx = ";
@@ -805,7 +787,7 @@ void PC_bsf_IterOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_
 }
 
 // 1. Movement on Polytope
-void PC_bsf_IterOutput_1(PT_bsf_reduceElem_T_1* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
+void CBSFTask::PC_bsf_IterOutput_1(PT_bsf_reduceElem_T_1* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
 	double elapsedTime, int nextJob)
 {
 	/*cout << "------------------ 1. Movement on Polytope. Iter # " << BSF_sv_iterCounter << " ------------------" << endl;
@@ -824,50 +806,50 @@ void PC_bsf_IterOutput_1(PT_bsf_reduceElem_T_1* reduceResult, int reduceCounter,
 };
 
 // 2.
-void PC_bsf_IterOutput_2(PT_bsf_reduceElem_T_2* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
+void CBSFTask::PC_bsf_IterOutput_2(PT_bsf_reduceElem_T_2* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
 	double elapsedTime, int nextJob)
 {
 	// not used
 }
 
 
-void PC_bsf_IterOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
+void CBSFTask::PC_bsf_IterOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter,
 	double elapsedTime, int nextJob)
 {
 	// not used
 }
 
 // 0. Start
-void PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
+void CBSFTask::PC_bsf_ProblemOutput(PT_bsf_reduceElem_T* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
 	ProblemOutput(t);
 }
 
 // 1. Movement on Polytope
-void PC_bsf_ProblemOutput_1(PT_bsf_reduceElem_T_1* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
+void CBSFTask::PC_bsf_ProblemOutput_1(PT_bsf_reduceElem_T_1* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
 	ProblemOutput(t);
 }
 
-void PC_bsf_ProblemOutput_2(PT_bsf_reduceElem_T_2* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
+void CBSFTask::PC_bsf_ProblemOutput_2(PT_bsf_reduceElem_T_2* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
 	// not used
 }
 
-void PC_bsf_ProblemOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
+void CBSFTask::PC_bsf_ProblemOutput_3(PT_bsf_reduceElem_T_3* reduceResult, int reduceCounter, PT_bsf_parameter_T parameter, double t) {
 	// not used
 }
 
 //---------------------------------- Problem functions -------------------------
-inline PT_float_T Vector_DotProductSquare(PT_vector_T x, PT_vector_T y) {
+inline PT_float_T CBSFTask::Vector_DotProductSquare(PT_vector_T x, PT_vector_T y) {
 	PT_float_T sum = 0;
 	for (int j = 0; j < PD_n; j++)
 		sum += x[j] * y[j];
 	return sum;
 }
 
-inline PT_float_T Vector_Norm(PT_vector_T x) {
+inline PT_float_T CBSFTask::Vector_Norm(PT_vector_T x) {
 	return sqrt(Vector_NormSquare(x));
 }
 
-inline PT_float_T Vector_NormSquare(PT_vector_T x) {
+inline PT_float_T CBSFTask::Vector_NormSquare(PT_vector_T x) {
 	PT_float_T sum = 0;
 
 	for (int j = 0; j < PD_n; j++) {
@@ -876,17 +858,17 @@ inline PT_float_T Vector_NormSquare(PT_vector_T x) {
 	return sum;
 }
 
-inline bool PointInHalfspace // If the point belongs to the Halfspace with prescigion of PD_Gap
+inline bool CBSFTask::PointInHalfspace // If the point belongs to the Halfspace with prescigion of PD_Gap
 (PT_vector_T point, PT_vector_T a, PT_float_T b) {
 	return Vector_DotProductSquare(a, point) <= b + PP_GAP;
 }
 
-inline bool PointInHalfspace_s // If the point belongs to the Halfspace with prescigion of PP_EPS_ZERO_COMPARE
+inline bool CBSFTask::PointInHalfspace_s // If the point belongs to the Halfspace with prescigion of PP_EPS_ZERO_COMPARE
 (PT_vector_T point, PT_vector_T a, PT_float_T b) {
 	return Vector_DotProductSquare(a, point) <= b + PP_EPS_ZERO_COMPARE;
 }
 
-inline bool PointInPolytope_s(PT_vector_T x) { // If the point belongs to the polytope with prescigion of PP_EPS_ZERO_COMPARE
+inline bool CBSFTask::PointInPolytope_s(PT_vector_T x) { // If the point belongs to the polytope with prescigion of PP_EPS_ZERO_COMPARE
 	for (int i = 0; i < PD_m; i++) {
 		if (PD_A[i][PP_ADD_FLAG] == 1)
 			continue;
@@ -896,13 +878,13 @@ inline bool PointInPolytope_s(PT_vector_T x) { // If the point belongs to the po
 	return true;
 }
 
-inline void Shift(PT_vector_T basePoint, PT_vector_T direction, PT_float_T siftLength, PT_vector_T endPoint) {
+inline void CBSFTask::Shift(PT_vector_T basePoint, PT_vector_T direction, PT_float_T siftLength, PT_vector_T endPoint) {
 	for (int j = 0; j < PD_n; j++)
 		endPoint[j] = basePoint[j] + direction[j] * siftLength;
 }
 
 // Calculating unit vector of direction from startPoint to endPoint
-inline bool GetDirection(PT_vector_T startPoint, PT_vector_T endPoint, PT_vector_T unitVector) {
+inline bool CBSFTask::GetDirection(PT_vector_T startPoint, PT_vector_T endPoint, PT_vector_T unitVector) {
 	for (int j = 0; j < PD_n; j++) {
 		unitVector[j] = endPoint[j] - startPoint[j];
 	}
@@ -917,56 +899,56 @@ inline bool GetDirection(PT_vector_T startPoint, PT_vector_T endPoint, PT_vector
 	return true;
 }
 
-inline void Vector_Copy(PT_vector_T fromPoint, PT_vector_T toPoint) { // toPoint = fromPoint
+inline void CBSFTask::Vector_Copy(PT_vector_T fromPoint, PT_vector_T toPoint) { // toPoint = fromPoint
 	for (int j = 0; j < PD_n; j++)
 		toPoint[j] = fromPoint[j];
 }
 
-inline void Vector_PlusEquals(PT_vector_T equalVector, PT_vector_T plusVector) { // equalVector += plusVector
+inline void CBSFTask::Vector_PlusEquals(PT_vector_T equalVector, PT_vector_T plusVector) { // equalVector += plusVector
 	for (int j = 0; j < PD_n; j++)
 		equalVector[j] += plusVector[j];
 }
 
-inline void Vector_MinusEquals(PT_vector_T equalPoint, PT_vector_T minusVector) { // equalPoint += minusVector
+inline void CBSFTask::Vector_MinusEquals(PT_vector_T equalPoint, PT_vector_T minusVector) { // equalPoint += minusVector
 	for (int j = 0; j < PD_n; j++)
 		equalPoint[j] -= minusVector[j];
 }
 
-inline void Vector_Addition(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x + y
+inline void CBSFTask::Vector_Addition(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x + y
 	for (int j = 0; j < PD_n; j++)
 		z[j] = x[j] + y[j];
 }
 
-inline void Vector_Subtraction(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x - y
+inline void CBSFTask::Vector_Subtraction(PT_vector_T x, PT_vector_T y, PT_vector_T z) {  // z = x - y
 	for (int j = 0; j < PD_n; j++)
 		z[j] = x[j] - y[j];
 }
 
-inline void Vector_MultiplyByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = r*x
+inline void CBSFTask::Vector_MultiplyByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = r*x
 	for (int j = 0; j < PD_n; j++)
 		y[j] = x[j] * r;
 }
 
-inline void Vector_MultiplyEquals(PT_vector_T x, double r) {  // x = r*x
+inline void CBSFTask::Vector_MultiplyEquals(PT_vector_T x, double r) {  // x = r*x
 	for (int j = 0; j < PD_n; j++)
 		x[j] *= r;
 }
 
-inline void Vector_DivideEquals(PT_vector_T x, double r) {  // x = x/r
+inline void CBSFTask::Vector_DivideEquals(PT_vector_T x, double r) {  // x = x/r
 	for (int j = 0; j < PD_n; j++)
 		x[j] /= r;
 }
 
-inline void Vector_ResetToZero(PT_vector_T x) {  // x = 0
+inline void CBSFTask::Vector_ResetToZero(PT_vector_T x) {  // x = 0
 	for (int j = 0; j < PD_n; j++) x[j] = 0;
 }
 
-inline void Vector_DivideByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = x/r
+inline void CBSFTask::Vector_DivideByNumber(PT_vector_T x, double r, PT_vector_T y) {  // y = x/r
 	for (int j = 0; j < PD_n; j++)
 		y[j] = x[j] / r;
 }
 
-inline void Vector_Round(PT_vector_T x) {
+inline void CBSFTask::Vector_Round(PT_vector_T x) {
 	double floorValue;
 	double fractionalPart;
 	double sign;
@@ -990,27 +972,27 @@ inline void Vector_Round(PT_vector_T x) {
 	}
 }
 
-inline void Vector_EpsZero(PT_vector_T x) { // If x[j] < PP_EPS_ZERO_DIR then x[j] = 0
+inline void CBSFTask::Vector_EpsZero(PT_vector_T x) { // If x[j] < PP_EPS_ZERO_DIR then x[j] = 0
 	for (int j = 0; j < PD_n; j++)
 		if (fabs(x[j]) < PP_EPS_ZERO_DIR)
 			x[j] = 0;
 }
 
-inline void Vector_Unit(PT_vector_T vector) { // Calculating unit vector
+inline void CBSFTask::Vector_Unit(PT_vector_T vector) { // Calculating unit vector
 	double normOfVector = Vector_Norm(vector);
 	for (int j = 0; j < PD_n; j++) {
 		vector[j] /= normOfVector;
 	}
 };
 
-inline PT_float_T ObjF(PT_vector_T x) {
+inline PT_float_T CBSFTask::ObjF(PT_vector_T x) {
 	PT_float_T s = 0;
 	for (int j = 0; j < PD_n; j++)
 		s += PD_c[j] * x[j];
 	return s;
 }
 
-static bool LoadMatrixFormat() {
+bool CBSFTask::LoadMatrixFormat() {
 	int nor,	// Number of matrix rows
 		noc,	// Number of matrix columns
 		non,	// Number of non-zero elements
@@ -1361,7 +1343,7 @@ cout << endl;
 	return true;
 }
 
-static bool Conversion() { // Transformation to inequalities & dimensionality reduction
+bool CBSFTask::Conversion() { // Transformation to inequalities & dimensionality reduction
 	static PT_float_T fvA[PP_MM]; // Free variable coefficients
 	static bool Flag[PP_N];		// Flags of free variables to delete
 	static int fvEqI;	// Inequality index of free variable
@@ -1535,7 +1517,7 @@ static bool Conversion() { // Transformation to inequalities & dimensionality re
 	/*end debug*/
 
 	/*debug*
-	if (BSF_sv_mpiRank == BSF_sv_mpiMaster) 
+	if (BSF_sv_mpiRank == BSF_sv_mpiMaster)
 		for (int j = 0; j < PD_n; j++)
 			cout << PD_c[j] << endl;
 	/*end debug*/
@@ -1543,7 +1525,7 @@ static bool Conversion() { // Transformation to inequalities & dimensionality re
 	return true;
 }
 
-static bool SavePoint(PT_vector_T x, const char* filename, double elapsedTime) {
+bool CBSFTask::SavePoint(PT_vector_T x, const char* filename, double elapsedTime) {
 	FILE* stream;
 
 	stream = fopen(filename, "w");
@@ -1563,7 +1545,7 @@ static bool SavePoint(PT_vector_T x, const char* filename, double elapsedTime) {
 }
 
 // Point projection onto Half-space <a,x> <= b
-inline void Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a, PT_float_T b, PT_vector_T projection, int* exitCode) {
+inline void CBSFTask::Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a, PT_float_T b, PT_vector_T projection, int* exitCode) {
 	double factor;
 	double aNormSquare = Vector_NormSquare(a);
 
@@ -1586,18 +1568,18 @@ inline void Vector_ProjectOnHalfspace(PT_vector_T point, PT_vector_T a, PT_float
 	return;
 }
 
-inline PT_float_T Distance(PT_vector_T x, PT_vector_T y) {
+inline PT_float_T CBSFTask::Distance(PT_vector_T x, PT_vector_T y) {
 	PT_vector_T z;
 	Vector_Subtraction(x, y, z);
 	return Vector_Norm(z);
 }
 
-inline void ObjUnitVector(PT_vector_T objUnitVector) { // Calculating Objective Unit Vector
+inline void CBSFTask::ObjUnitVector(PT_vector_T objUnitVector) { // Calculating Objective Unit Vector
 	double c_norm = Vector_Norm(PD_c);
 	Vector_DivideByNumber(PD_c, c_norm, objUnitVector);
 }
 
-inline void ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBound) { // Shrink Objective Unit Vector from 0 to (shrinkBound-1)
+inline void CBSFTask::ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBound) { // Shrink Objective Unit Vector from 0 to (shrinkBound-1)
 	for (int j = 0; j < shrinkBound; j++)
 		objUnitVector[PD_objI[j]] = 0;
 	for (int j = shrinkBound; j < PD_n; j++)
@@ -1606,12 +1588,12 @@ inline void ShrinkUnitVector(PT_vector_T objUnitVector, int shrinkBound) { // Sh
 	Vector_DivideEquals(objUnitVector, norm);
 }
 
-inline void MakeObjVector(PT_vector_T c, PT_vector_T objVector) { // Calculating Objective Vector
+inline void CBSFTask::MakeObjVector(PT_vector_T c, PT_vector_T objVector) { // Calculating Objective Vector
 	double c_norm = Vector_Norm(c);
 	Vector_MultiplyByNumber(c, PP_OBJECTIVE_VECTOR_LENGTH / c_norm, objVector);
 }
 
-inline void ProblemOutput(double elapsedTime) {
+inline void CBSFTask::ProblemOutput(double elapsedTime) {
 	cout << "=============================================" << endl;
 	cout << "Elapsed time: " << elapsedTime << endl;
 	cout << "Iterations: " << BSF_sv_iterCounter << endl;
@@ -1634,7 +1616,7 @@ inline void ProblemOutput(double elapsedTime) {
 	cout << endl;
 }
 
-inline void SkipComments(FILE* stream) {
+inline void CBSFTask::SkipComments(FILE* stream) {
 	fpos_t pos;	// Position in the input stream
 	int res;
 	res = fscanf(stream, "\n");
@@ -1647,7 +1629,7 @@ inline void SkipComments(FILE* stream) {
 	fsetpos(stream, &pos);
 };
 
-inline void SortObjVarI() { // Sorting objective variables in absolute descending order
+inline void CBSFTask::SortObjVarI() { // Sorting objective variables in absolute descending order
 	PT_float_T bigestAbsVal;
 	int iBig;
 
@@ -1672,14 +1654,14 @@ inline void SortObjVarI() { // Sorting objective variables in absolute descendin
 	}
 }
 
-inline void MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T basePoint, PT_vector_T x, bool* goOn)
-{ 
+inline void CBSFTask::MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T basePoint, PT_vector_T x, bool* goOn)
+{
 	static PT_float_T objF_basePoint = ObjF(basePoint);
 	PT_float_T objF_x = ObjF(x);
 
 	//if (PD_pointIn && objF_basePoint < objF_x) {
 	if (PD_pointIn) {
-			PD_numDetDir = 0;
+		PD_numDetDir = 0;
 		PD_numShiftsSameLength++;
 		if (PD_numShiftsSameLength > PP_MAX_NUM_SHIFTS_SAME_LENGTH) {
 			PD_shiftLength *= 2;
@@ -1699,9 +1681,9 @@ inline void MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T bas
 		cout << "\tF(t) = " << setw(PP_SETW) << ObjF(x);
 		cout << endl;
 #endif 
-/*end debug*/
+		/*end debug*/
 
-		*goOn = true;
+		* goOn = true;
 		return;
 	}
 
@@ -1714,17 +1696,17 @@ inline void MovingOnSurface(PT_vector_T ptr_unitVectorToSurface, PT_vector_T bas
 	PD_numShiftsSameLength = 0;
 	Shift(basePoint, ptr_unitVectorToSurface, PD_shiftLength, x);
 	*goOn = true;
-/**#ifdef PP_DEBUG
-	cout << "Sift = " << setw(PP_SETW) << PD_shiftLength << "\tt = ";
-	for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++)
-		cout << setw(PP_SETW) << x[PD_objI[j]];
-	if (PP_OUTPUT_LIMIT < PD_n) cout << "	...";
-	cout << "\tF(t) = " << setw(PP_SETW) << ObjF(x);
-	cout << endl;
-#endif // PP_DEBUG /**/
+	/**#ifdef PP_DEBUG
+		cout << "Sift = " << setw(PP_SETW) << PD_shiftLength << "\tt = ";
+		for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++)
+			cout << setw(PP_SETW) << x[PD_objI[j]];
+		if (PP_OUTPUT_LIMIT < PD_n) cout << "	...";
+		cout << "\tF(t) = " << setw(PP_SETW) << ObjF(x);
+		cout << endl;
+	#endif // PP_DEBUG /**/
 }
 
-inline void DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* repeat) {
+inline void CBSFTask::DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* repeat) {
 
 	*repeat = false;
 
@@ -1743,30 +1725,30 @@ inline void DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* 
 		return;
 	}
 
-		/*debug7*
-	if (PD_objF_u >= ObjF(parameter->x) + PP_EPS_OBJ) {
-		cout << setw(PP_SETW) << "F(u) = " << PD_objF_u << " >= F(w) = " << ObjF(parameter->x) << endl;
-		if (PP_MODE_BLOCK_HCV_VARIABLE)
-			cout << "Maybe, you should make #define PP_MODE_BLOCK_HCV_VARIABLE false.\n";
-		else
-			cout << "Maybe, you should decreas PP_EPS_OBJ.\n";
-		*exit = true;
-		return;
-	}
-		/*end debug*/
-
-		/*debug8*
-	if (fabs(ObjF(parameter->x) - PD_objF_u) < PP_EPS_OBJ) {
-		cout << setw(PP_SETW) << "F(u) = " << PD_objF_u << " == F(w) = " << ObjF(parameter->x) << "\n";
+	/*debug7*
+if (PD_objF_u >= ObjF(parameter->x) + PP_EPS_OBJ) {
+	cout << setw(PP_SETW) << "F(u) = " << PD_objF_u << " >= F(w) = " << ObjF(parameter->x) << endl;
+	if (PP_MODE_BLOCK_HCV_VARIABLE)
+		cout << "Maybe, you should make #define PP_MODE_BLOCK_HCV_VARIABLE false.\n";
+	else
 		cout << "Maybe, you should decreas PP_EPS_OBJ.\n";
-		*exit = true;
-		return;
-	}
-		/*end debug*/
+	*exit = true;
+	return;
+}
+	/*end debug*/
+
+	/*debug8*
+if (fabs(ObjF(parameter->x) - PD_objF_u) < PP_EPS_OBJ) {
+	cout << setw(PP_SETW) << "F(u) = " << PD_objF_u << " == F(w) = " << ObjF(parameter->x) << "\n";
+	cout << "Maybe, you should decreas PP_EPS_OBJ.\n";
+	*exit = true;
+	return;
+}
+	/*end debug*/
 
 	Vector_EpsZero(PD_direction);
 
-/*debug00*/
+	/*debug00*/
 #ifdef PP_DEBUG //----------------------------------------------//
 	cout << "D =\t\t";											//
 	for (int j = 0; j < PF_MIN(PP_OUTPUT_LIMIT, PD_n); j++)		//
@@ -1794,12 +1776,12 @@ inline void DetermineDirection(PT_bsf_parameter_T* parameter, bool* exit, bool* 
 #ifdef PP_DEBUG
 			cout << "Variable " << PD_indexToBlock - 1 << " is blocked.\n";
 #endif
-			*repeat = true;
+			* repeat = true;
 		}
 	}
 }
 
-inline double ProblemScale() {
+inline double CBSFTask::ProblemScale() {
 	double problemScale = 0;
 	for (int i = 0; i < PD_m; i++) {
 		for (int j = 0; j < PD_n; j++) {
@@ -1810,4 +1792,3 @@ inline double ProblemScale() {
 	}
 	return problemScale;
 }
-/**/
